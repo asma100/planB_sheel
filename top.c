@@ -78,6 +78,7 @@ int main(void)
         {
             if (topcmd(argv) == -1)
             {
+                (void) topcmd(argv);
                 print_top("Error executing command.\n");
             }
         }
