@@ -24,13 +24,20 @@ int main(void)
   int u = 0;
 const char *delim = " \t\n";
   while (1)
+{
+  print_top("top$");
+  checkline = getline(&input, &s, stdin);
+  if (checkline == -1)
+  { perror("Error reading input:");
+    free(input);
+    free(input_cp);
+    free(argv); 
+    return (-1);
+  }
+  else if (checkline == 1 && input[0] == '\n')
   {
-print_top("top$");
-checkline = getline(&input, &s, stdin);
-if(checkline == -1)
- {  
-return (-1); 
-}
+    continue;
+  }
 input_cp = malloc(sizeof(char) * checkline);
 if (input_cp == NULL){
 return (-1);
@@ -40,7 +47,14 @@ return (-1);
 print_top("Exiting shell....\n");
 return (-1);
 }
-else {
+else { else if (strcmp(input, "exit\n") == 0)
+  {
+   
+    free(input);
+    free(input_cp);
+    free(argv); 
+    return (0);
+  }
 tok = strtok(input, delim);
 while (tok != NULL){
 tok_counter++;
