@@ -22,7 +22,7 @@ int main(void)
   char *tok;
   int tok_counter =0;
   int u = 0;
-const char *delim = " \n";
+const char *delim = " \t\n";
   while (1)
   {
 print_top("top$");
