@@ -23,12 +23,13 @@ int main(void)
   int tok_counter =0;
   int u = 0;
 const char *delim = " \t\n";
-  while (1)
+while (1)
 {
   print_top("top$");
   checkline = getline(&input, &s, stdin);
   if (checkline == -1)
-  { perror("Error reading input:");
+  {
+    perror("Error reading input:");
     free(input);
     free(input_cp);
     free(argv); 
@@ -36,20 +37,12 @@ const char *delim = " \t\n";
   }
   else if (checkline == 1 && input[0] == '\n')
   {
+    // empty input, do nothing
     continue;
   }
-input_cp = malloc(sizeof(char) * checkline);
-if (input_cp == NULL){
-return (-1);
-}
- strcpy(input_cp,input);
- if (checkline == -1){
-print_top("Exiting shell....\n");
-return (-1);
-}
-else { else if (strcmp(input, "exit\n") == 0)
+  else if (strcmp(input, "exit\n") == 0)
   {
-   
+    // user entered "exit", quit program
     free(input);
     free(input_cp);
     free(argv); 
