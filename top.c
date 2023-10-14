@@ -34,6 +34,19 @@ int main(void) {
       free(argv);
       return (-1);
     }
+      else if (checkline == 1 && input[0] == '\n')
+  {
+    /* empty input, do nothing*/
+    continue;
+  }
+  else if (strcmp(input, "exit\n") == 0)
+  {
+    /* user entered "exit", quit program */
+    free(input);
+    free(input_cp);
+    free(argv); 
+    return (0);
+  }
 
     input_cp = malloc(sizeof(char) * (checkline + 1));
     if (input_cp == NULL) {
