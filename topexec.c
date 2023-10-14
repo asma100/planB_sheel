@@ -19,7 +19,7 @@ void topcmd(char **argv){
         }
        else if (pid == 0) {
         /* Child process*/
-        execlp(acmd, argv, (char *)NULL);
+        (execve(acmd, argv, NULL);
         perror("execlp");
         exit(EXIT_FAILURE);
     } else {
