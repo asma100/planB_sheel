@@ -13,11 +13,9 @@ int _strlen(char *s) {
 }
 
 int main(void) {
- if (isatty (STDIN_FILENO)) {
-/* shell is running in interactive mode */
-/* display prompt and accept input from user */
-
-
+ 
+int u;
+char *line;
   char *input = NULL;
   ssize_t checkline;
   size_t s = 0;
@@ -27,8 +25,10 @@ int main(void) {
   char **argv = NULL;
   int u = 0;
   int j;
-  const char *delim = " \n";
-
+  const char *delim = " \t\n";
+if (isatty (STDIN_FILENO)) {
+/* shell is running in interactive mode */
+/* display prompt and accept input from user */
   while (1) {
     print_top("top$");
     checkline = getline(&input, &s, stdin);
@@ -109,7 +109,7 @@ FILE *fp = fopen("script.txt", "r"); /*open script file for reading*/
         return (-1);
     }
 
-    char *line = NULL;
+    line = NULL;
     size_t len = 0;
     ssize_t checkline;
 
@@ -142,12 +142,12 @@ FILE *fp = fopen("script.txt", "r"); /*open script file for reading*/
             }
 
             tok = strtok(line, delim);
-            int u;
+            
             for (u = 0; tok != NULL; u++) {
                 argv[u] = malloc(sizeof(char) * (strlen(tok) + 1));
                 if (argv[u] == NULL) {
                     perror("Error allocating memory for argv[u]:");
-                    for (int j = 0; j < u; j++) {
+                    for ( j = 0; j < u; j++) {
                         free(argv[j]);
                     }
                     free(argv);
@@ -163,7 +163,7 @@ FILE *fp = fopen("script.txt", "r"); /*open script file for reading*/
             topcmd(argv);
 
             /* free memory allocated for argv*/
-            for (int j = 0; j < u; j++) {
+            for ( j = 0; j < u; j++) {
                 free(argv[j]);
             }
             free(argv);
@@ -176,6 +176,5 @@ FILE *fp = fopen("script.txt", "r"); /*open script file for reading*/
 }
 
 
-}
   return (0);
 }
