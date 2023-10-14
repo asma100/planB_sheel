@@ -14,7 +14,7 @@ int _strlen(char *s) {
 
 int main(void) {
  
-int u;
+size_t len;
 char *line;
   char *input = NULL;
   ssize_t checkline;
@@ -110,8 +110,8 @@ FILE *fp = fopen("script.txt", "r"); /*open script file for reading*/
     }
 
     line = NULL;
-    size_t len = 0;
-    ssize_t checkline;
+     len = 0;
+   
 
     while ((checkline = getline(&line, &len, fp)) != -1) {
         /* read each line from script file */
