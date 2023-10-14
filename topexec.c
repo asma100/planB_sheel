@@ -4,7 +4,7 @@ void topcmd(char **argv){
     char *cmd = NULL, *acmd = NULL;
 
     pid_t pid ;
-    if (argv){
+   if (argv){
         /* get the command */
         cmd = argv[0];
 
@@ -12,29 +12,24 @@ void topcmd(char **argv){
         acmd = finding_path(cmd);
 
         /* create a child process to execute the command */
-        pid = fork();
+         pid = fork();
         if (pid == -1){
             perror("Error:");
-            exit(EXIT_FAILURE);
         }
-        else if (pid == 0) {
-            /* Child process*/
-            if (execve(acmd, argv, NULL) == -1) {
-                perror("execve");
+        else if (pid == 0){ /* child process */
+            /* execute the actual command with execve */
+            if (execve(acmd, argv, NULL) == -1){
+                perror("Error:");
                 exit(EXIT_FAILURE);
             }
-        } else {
-            /* Parent process*/
+        }
+        else { /* parent process */
+            /* wait for the child process to finish */
             int status;
-            if (wait(&status) == -1) {
-                perror("wait");
-                exit(EXIT_FAILURE);
+            if (waitpid(pid, &status, 0) == -1){
+                perror("Error:");
             }
-            if (WIFEXITED(status)) {
-                printf("Child process exited with status %d\n", WEXITSTATUS(status));
-            } else if (WIFSIGNALED(status)) {
-                printf("Child process terminated by signal %d\n", WTERMSIG(status));
-            }
+            
         }
     }
 }
