@@ -17,13 +17,13 @@ void topcmd(char **argv){
             perror("Error:");
               exit(EXIT_FAILURE);
         }
-       else if (child_pid == 0) {
-        // Child process
-        execlp(command, command, (char *)NULL);
+       else if (pid == 0) {
+        /* Child process*/
+        execlp(acmd, argv, (char *)NULL);
         perror("execlp");
         exit(EXIT_FAILURE);
     } else {
-        // Parent process
+        /* Parent process*/
         wait(NULL);
     }
 }
