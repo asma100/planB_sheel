@@ -137,12 +137,12 @@ if (isatty (STDIN_FILENO)) {
             }
 
             tok = strtok(line, delim);
-            int u;
+          
             for (u = 0; tok != NULL; u++) {
                 argv[u] = malloc(sizeof(char) * (strlen(tok) + 1));
                 if (argv[u] == NULL) {
                     perror("Error allocating memory for argv[u]:");
-                    for (int j = 0; j < u; j++) {
+                    for ( j = 0; j < u; j++) {
                         free(argv[j]);
                     }
                     free(argv);
@@ -157,7 +157,7 @@ if (isatty (STDIN_FILENO)) {
             topcmd(argv);
 
             /* free memory allocated for argv*/
-            for (int j = 0; j < u; j++) {
+            for ( j = 0; j < u; j++) {
                 free(argv[j]);
             }
             free(argv);
