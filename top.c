@@ -14,8 +14,7 @@ int _strlen(char *s) {
 
 int main(void) {
  
-size_t len;
-char *line;
+
   char *input = NULL;
   ssize_t checkline;
   size_t s = 0;
