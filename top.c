@@ -112,7 +112,7 @@ if (isatty (STDIN_FILENO)) {
     while ((checkline = getline(&line, &len, stdin)) != -1) {
         /*read each line from standard input*/
         if (checkline == 1 && line[0] == '\n') {
-            // empty line, do nothing
+            /* empty line, do nothing*/
             continue;
         }
         else {
