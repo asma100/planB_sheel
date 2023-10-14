@@ -15,21 +15,16 @@ void topcmd(char **argv){
          pid = fork();
         if (pid == -1){
             perror("Error:");
+              exit(EXIT_FAILURE);
         }
-        else if (pid == 0){ /* child process */
-            /* execute the actual command with execve */
-            if (execve(acmd, argv, NULL) == -1){
-                perror("Error:");
-                exit(EXIT_FAILURE);
-            }
-        }
-        else { /* parent process */
-            /* wait for the child process to finish */
-            int status;
-            if (waitpid(pid, &status, 0) == -1){
-                perror("Error:");
-            }
-            
-        }
+       else if (child_pid == 0) {
+        // Child process
+        execlp(command, command, (char *)NULL);
+        perror("execlp");
+        exit(EXIT_FAILURE);
+    } else {
+        // Parent process
+        wait(NULL);
     }
+}
 }
