@@ -39,8 +39,7 @@ if (isatty (STDIN_FILENO)) {
    free(input);
    return (-1);
   }
-   else if (checkline == 1 && input[0] == '\n')
- {
+   else if (checkline == 1 && input[0] == '\n'){
   /* empty input, do nothing*/
   continue;
  }
@@ -95,7 +94,8 @@ if (isatty (STDIN_FILENO)) {
  free(input);
  free(input_cp);
 } 
-}else {
+}
+else {
 /* shell is running in non-interactive mode */
 /* execute commands from script or batch file*/
 
@@ -162,7 +162,6 @@ if (isatty (STDIN_FILENO)) {
   /* free memory*/
   free(line);
 }
-
 
  return (0);
 }
