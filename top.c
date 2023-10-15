@@ -13,9 +13,6 @@ int _strlen(char *s) {
 }
 
 int main(void) {
- 
-size_t len;
-char *line;
   char *input = NULL;
   ssize_t checkline;
   size_t s = 0;
@@ -25,10 +22,8 @@ char *line;
   char **argv = NULL;
   int u = 0;
   int j;
-  const char *delim = " \t\n";
-if (isatty (STDIN_FILENO)) {
-/* shell is running in interactive mode */
-/* display prompt and accept input from user */
+  const char *delim = " \n";
+
   while (1) {
     print_top("top$");
     checkline = getline(&input, &s, stdin);
@@ -100,83 +95,7 @@ if (isatty (STDIN_FILENO)) {
 
   free(input);
   free(input_cp);
-} else {
-/* shell is running in non-interactive mode */
-/* execute commands from script or batch file*/
-FILE *fp = fopen("script.txt", "r"); /*open script file for reading*/
-    if (fp == NULL) {
-        perror("Error opening script file:");
-        return (-1);
-    }
-
-    line = NULL;
-     len = 0;
-   
-
-    while ((checkline = getline(&line, &len, fp)) != -1) {
-        /* read each line from script file */
-        if (checkline == 1 && line[0] == '\n') {
-            /* empty line, do nothing*/
-            continue;
-        }
-        else {
-            /* execute command*/
-            char **argv = NULL;
-            int tok_counter = 0;
-            char *tok;
-            const char *delim = " \n";
-
-            tok = strtok(line, delim);
-            while (tok != NULL) {
-                tok_counter++;
-                tok = strtok(NULL, delim);
-            }
-            tok_counter++;
-
-            argv = malloc(sizeof(char *) * tok_counter);
-            if (argv == NULL) {
-                perror("Error allocating memory for argv:");
-                free(line);
-                fclose(fp);
-                return (-1);
-            }
-
-            tok = strtok(line, delim);
-            
-            for (u = 0; tok != NULL; u++) {
-                argv[u] = malloc(sizeof(char) * (strlen(tok) + 1));
-                if (argv[u] == NULL) {
-                    perror("Error allocating memory for argv[u]:");
-                    for ( j = 0; j < u; j++) {
-                        free(argv[j]);
-                    }
-                    free(argv);
-                    free(line);
-                    fclose(fp);
-                    return (-1);
-                }
-                strcpy(argv[u], tok);
-                tok = strtok(NULL, delim);
-            }
-            argv[u] = NULL;
-
-            topcmd(argv);
-
-            /* free memory allocated for argv*/
-            for ( j = 0; j < u; j++) {
-                free(argv[j]);
-            }
-            free(argv);
-        }
-    }
-
-    /*close script file and free memory*/
-    free(line);
-    fclose(fp);
-}
-
 
   return (0);
 }
-
 
