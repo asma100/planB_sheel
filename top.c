@@ -137,6 +137,10 @@ if (isatty (STDIN_FILENO)) {
                 perror("Error allocating memory for argv:");
                 free(line);
                 return (-1);
+              for (int i = 0; i < u; i++) {
+    free(argv[i]);
+}
+free(argv);
             }
 
             tok = strtok(line, delim);
