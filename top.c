@@ -33,11 +33,15 @@ if (isatty (STDIN_FILENO)) {
   print_top("top$");
   checkline = getline(&input, &s, stdin);
   if (checkline == -1) {
+   if (errno == EOF) {
+      printf("The user has finished entering input.\n");
+    } else {
    perror("Error reading input:");
    free(input);
    free(input_cp);
    free(argv);
    return (-1);
+  }
   }
    else if (checkline == 1 && input[0] == '\n')
  {
