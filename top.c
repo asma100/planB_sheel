@@ -59,6 +59,9 @@ if (isatty (STDIN_FILENO)) {
       free(argv);
       return (-1);
     }
+    else {
+  free(input_cp);
+}
     strcpy(input_cp, input);
 
     tok = strtok(input, delim);
