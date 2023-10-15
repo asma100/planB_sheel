@@ -76,7 +76,6 @@ if (isatty (STDIN_FILENO)) {
       perror("Error allocating memory for argv:");
       free(input);
       free(input_cp);
-      free(input_cp);
       return (-1);
     }
 
@@ -137,7 +136,7 @@ if (isatty (STDIN_FILENO)) {
                 perror("Error allocating memory for argv:");
                 free(line);
                 return (-1);
-              for (int i = 0; i < u; i++) {
+              for ( i = 0; i < u; i++) {
     free(argv[i]);
 }
 free(argv);
