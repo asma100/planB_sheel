@@ -24,8 +24,8 @@ int main(void) {
   char **argv = NULL;
   int u = 0;
   int j;
-  int i,
-   char *delim = " \t\n";
+  int i;
+  const char *delim = " \t\n";
 if (isatty (STDIN_FILENO)) {
 /* shell is running in interactive mode */
 /* display prompt and accept input from user */
