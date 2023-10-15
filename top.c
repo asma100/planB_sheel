@@ -34,7 +34,7 @@ if (isatty (STDIN_FILENO)) {
   if (checkline == -1) {
    if (errno == EOF) {
         printf("The user has finished entering input.\n");
-      } else if {
+      } else  {
    perror("Error reading input:");
    free(input);
    return (-1);
@@ -94,7 +94,8 @@ if (isatty (STDIN_FILENO)) {
  }
  free(input);
  free(input_cp);
-} else {
+} 
+}else {
 /* shell is running in non-interactive mode */
 /* execute commands from script or batch file*/
 
