@@ -168,6 +168,6 @@ if (isatty (STDIN_FILENO)) {
     free(line);
 }
 
-
+free(argv);
   return (0);
 }
