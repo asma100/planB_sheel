@@ -28,10 +28,8 @@ int main(void) {
  const char *delim = " \t\n";
 if (isatty (STDIN_FILENO)) {
 /* shell is running in interactive mode */
-/* display prompt and accept input from user */
  while (1) {
   print_top("top$");
-
   checkline = getline(&input, &s, stdin);
   if (checkline == -1) {
    if (errno == EOF) {
@@ -39,10 +37,7 @@ if (isatty (STDIN_FILENO)) {
       } else if {
    perror("Error reading input:");
    free(input);
-   free(input_cp);
-   free(argv);
    return (-1);
-  
   }
    else if (checkline == 1 && input[0] == '\n')
  {
@@ -53,16 +48,13 @@ if (isatty (STDIN_FILENO)) {
  {
   /* user entered "exit", quit program */
   free(input);
-  free(input_cp);
-  free(argv); 
   return (0);
  }
-
   input_cp = malloc(sizeof(char) * (checkline + 1));
   if (input_cp == NULL) {
    perror("Error allocating memory:");
    free(input);
-   free(argv);
+   free(input_cp);
    return (-1);
   }
   strcpy(input_cp, input);
@@ -72,13 +64,12 @@ if (isatty (STDIN_FILENO)) {
    tok_counter++;
    tok = strtok(NULL, delim);
   }
-  
-
+  free(input_cp);
   argv = malloc(sizeof(char *) *( tok_counter)+1);
   if (argv == NULL) {
    perror("Error allocating memory for argv:");
    free(input);
-   free(input_cp);
+   free(argv);
    return (-1);
   }
 
@@ -99,10 +90,8 @@ if (isatty (STDIN_FILENO)) {
    tok = strtok(NULL, delim);
   }
   argv[u] = NULL;
-
   topcmd(argv);
  }
-
  free(input);
  free(input_cp);
 } else {
