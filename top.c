@@ -73,6 +73,7 @@ if (isatty (STDIN_FILENO)) {
       perror("Error allocating memory for argv:");
       free(input);
       free(input_cp);
+      free(input_cp);
       return (-1);
     }
 
