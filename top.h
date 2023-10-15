@@ -7,6 +7,7 @@
 #include <unistd.h>
 #include <string.h>
 #include <sys/wait.h>
+#include <errno.h>
 void print_top(char *top);
 void topcmd(char **argv);
 int _strlen(char *s);
