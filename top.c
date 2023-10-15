@@ -31,12 +31,11 @@ if (isatty (STDIN_FILENO)) {
 /* display prompt and accept input from user */
  while (1) {
   print_top("top$");
+  if (errno == EOF) {
+  printf("The user has finished entering input.\n");
+}
   checkline = getline(&input, &s, stdin);
   if (checkline == -1) {
-   if (errno == EOF) {
-    errno = 0;
-      printf("The user has finished entering input.\n");
-    } else {
    perror("Error reading input:");
    free(input);
    free(input_cp);
