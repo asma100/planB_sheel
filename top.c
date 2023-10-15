@@ -34,6 +34,7 @@ if (isatty (STDIN_FILENO)) {
   checkline = getline(&input, &s, stdin);
   if (checkline == -1) {
    if (errno == EOF) {
+    errno = 0;
       printf("The user has finished entering input.\n");
     } else {
    perror("Error reading input:");
