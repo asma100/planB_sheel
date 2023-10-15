@@ -71,9 +71,9 @@ if (isatty (STDIN_FILENO)) {
    tok_counter++;
    tok = strtok(NULL, delim);
   }
-  tok_counter++;
+  
 
-  argv = malloc(sizeof(char *) * tok_counter);
+  argv = malloc(sizeof(char *) *( tok_counter)+1);
   if (argv == NULL) {
    perror("Error allocating memory for argv:");
    free(input);
@@ -124,7 +124,7 @@ if (isatty (STDIN_FILENO)) {
       char **argv = NULL;
       int tok_counter = 0;
       char *tok;
-      const char *delim = " \n";
+      const char *delim = " \t\n";
 
       tok = strtok(line, delim);
       while (tok != NULL) {
