@@ -1,4 +1,4 @@
-void nontop(char *line,)
+void nontop(char *line,size_t s)
 char **argv = NULL;
    int tok_counter = 0;
    char *tok;
