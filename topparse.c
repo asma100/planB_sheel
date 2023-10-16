@@ -8,7 +8,7 @@ char  **Parse(char * input, const char *delim)
  char **arr = NULL;
  int u = 0;
  int j;
-    checkline = getline(&input, &s, stdin);
+    checkline = getline(&input, &sizof(input), stdin);
     
     input_cp = malloc(sizeof(char) * (checkline + 1));
  if (input_cp == NULL) {
