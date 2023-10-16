@@ -35,7 +35,7 @@ char *finding_path(char *command) {
     }
   }
 
-  // Free the memory for the fp variable, even if we are not able to find the command.
+  /* Free the memory for the fp variable, even if we are not able to find the command.*/
   free(fp);
   return (NULL);
 }
