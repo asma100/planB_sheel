@@ -2,7 +2,7 @@
 char **Parse(char * input, const char *delim)
 {
     size_t s;
-   
+   ssize_t checkline;
    
     char *tok;
     int tok_counter = 0;
@@ -12,8 +12,8 @@ char **Parse(char * input, const char *delim)
     int i;
     char *input_cp = strdup(input);
 
-    checkline = getline(&input, &s, stdin);
-/* input_cp = malloc(sizeof(char) * (checkline + 1));
+ /*   checkline = getline(&input, &s, stdin);
+ input_cp = malloc(sizeof(char) * (checkline + 1));
     strcpy(input_cp, input);*/
     if (input_cp == NULL) {
         perror("Error allocating memory:");
