@@ -27,6 +27,7 @@ char *finding_path(char *command) {
     free(pc);
     if (stat(command, &s_buff) == 0) {
       return (command);
+       free(fp);
     }
   }
    free(fp);
