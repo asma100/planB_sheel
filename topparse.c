@@ -1,4 +1,4 @@
-#include "top.h"
+ #include "top.h"
 char **Parse(char * input, const char *delim)
 {
   /*  size_t s;
@@ -60,12 +60,12 @@ char **Parse(char * input, const char *delim)
     arr[u] = NULL;
 
     free(input_cp);
-   free(input);
+  
   
     topcmd(arr);
      for (i = 0; i < u; i++) {
         free(arr[i]);
     }
     free(arr);
-     return(arr);
+     return(arr);
 }
