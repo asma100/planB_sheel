@@ -11,7 +11,7 @@ char *finding_path(char *command) {
   pt = strtok(pc, ":");
   while (pt != NULL) {
    d_len = strlen(pt);
-   fp = malloc(cmd_len + d_len + 2);
+   fp = malloc(255);
    strcpy(fp, pt);
    strcat(fp, "/");
    strcat(fp, command);
