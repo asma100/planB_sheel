@@ -12,6 +12,11 @@ char *finding_path(char *command) {
     while (pt != NULL) {
       d_len = strlen(pt);
       fp = malloc(cmd_len + d_len + 2);
+      if (fp == NULL) {
+        perror("Error allocating memory:");
+        free(pc);
+        return NULL;
+      }
       strcpy(fp, pt);
       strcat(fp, "/");
       strcat(fp, command);
@@ -20,7 +25,6 @@ char *finding_path(char *command) {
         free(pc);
         return (fp);
       } else {
-        free(fp);
         pt = strtok(NULL, ":");
       }
     }
@@ -30,6 +34,10 @@ char *finding_path(char *command) {
 
     }
   }
-   free(fp);
+
+  /* Free the memory that was allocated for fp, but only if the command does not exist. */
+  if (fp != NULL) {
+    free(fp);
+  }
   return (NULL);
 }
