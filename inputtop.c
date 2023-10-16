@@ -20,6 +20,7 @@ void inputtop(char *input, size_t s) {
   }
   else if (strcmp(input, "exit\n") == 0) {
     /* user wants to exit the program */
+    free(input);
     exit(EXIT_SUCCESS);
   }
   else
