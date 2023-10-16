@@ -1,6 +1,6 @@
 #include "top.h" 
 char  **Parse(char * input, const char *delim)
-{     
+{     size_t s;
     ssize_t checkline;
     char *input_cp = NULL;
  char *tok;
@@ -8,7 +8,7 @@ char  **Parse(char * input, const char *delim)
  char **arr = NULL;
  int u = 0;
  int j;
-    checkline = getline(&input, &sizeof(input), stdin);
+    checkline = getline(&input, &s, stdin);
     
     input_cp = malloc(sizeof(char) * (checkline + 1));
  if (input_cp == NULL) {
