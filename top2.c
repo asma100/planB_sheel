@@ -16,14 +16,7 @@ int main(void) {
  
 
  char *input = NULL;
- ssize_t checkline;
- size_t s = 0;
- char *input_cp = NULL;
- char *tok;
- int tok_counter = 0;
- char **argv = NULL;
- int u = 0;
- int j;
+
  const char *delim = " \t\n";
 if (isatty (STDIN_FILENO)) {
 /* shell is running in interactive mode */
