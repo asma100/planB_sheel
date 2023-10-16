@@ -1,4 +1,5 @@
-   char **argv = NULL;
+void nontop(char *line,)
+char **argv = NULL;
    int tok_counter = 0;
    char *tok;
    const char *delim = " \n";
