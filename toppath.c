@@ -20,17 +20,17 @@ char *finding_path(char *command) {
     free(pc);
     return (fp);
    } else {
-    free(fp);
     pt = strtok(NULL, ":");
+    free(fp); 
    }
   }
   free(pc);
   
   if (stat(command, &s_buff) == 0) {
    return (command);
-
+  } else {
+    free(fp); 
   }
-
  }
 
  return (NULL);
