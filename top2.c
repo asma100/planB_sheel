@@ -54,7 +54,7 @@ if (isatty (STDIN_FILENO)) {
       
    /* execute command*/
 
-   topcmd(argv);
+   topcmd(arr);
 }
 }
 }
