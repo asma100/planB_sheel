@@ -11,7 +11,6 @@ char **Parse(char * input, const char *delim)
     int j;
     int i;
     char *input_cp = strdup(input);
-
  /*   checkline = getline(&input, &s, stdin);
  input_cp = malloc(sizeof(char) * (checkline + 1));
     strcpy(input_cp, input);*/
@@ -20,14 +19,10 @@ char **Parse(char * input, const char *delim)
         free(input);
         return NULL;
     }
-
+    
   /* Check for an empty input string */
   if (input[0] == '\0') {
     free(input_cp);
-char **Parse(char *input, const char *delim) {
-  char *input_cp = strdup(input); 
-  if (input_cp == NULL) {
-    perror("Error allocating memory for input_cp:");
     return NULL;
   }
     tok = strtok(input, delim);
@@ -36,7 +31,6 @@ char **Parse(char *input, const char *delim) {
         tok = strtok(NULL, delim);
     }
     tok_counter++;
-
     arr = malloc(sizeof(char *) * tok_counter);
     if (arr == NULL) {
         perror("Error allocating memory for arr:");
@@ -44,10 +38,6 @@ char **Parse(char *input, const char *delim) {
         free(input_cp);
         return NULL;
     }
-  char *tok;
-  int tok_counter = 0;
-  char **arr = NULL;
-
     tok = strtok(input_cp, delim);
     for (u = 0; tok != NULL; u++) {
         arr[u] = malloc(sizeof(char) * (strlen(tok) + 2));
@@ -65,45 +55,16 @@ char **Parse(char *input, const char *delim) {
         tok = strtok(NULL, delim);
     }
     arr[u] = NULL;
-  tok = strtok(input_cp, delim);
-  while (tok != NULL) {
-    tok_counter++;
-    tok = strtok(NULL, delim);
-  }
-  tok_counter++;
 
-  arr = (char **)malloc(sizeof(char *) * tok_counter);
-  if (arr == NULL) {
-    perror("Error allocating memory for arr:");
     free(input_cp);
-    return NULL;
-  }
 
+    **free(input);**
    free(input);
 
     topcmd(arr);
      for (i = 0; i < u; i++) {
         free(arr[i]);
-  tok = strtok(input_cp, delim);
-  int u;
-  for (u = 0; tok != NULL; u++) {
-    arr[u] = strdup(tok); 
-    if (arr[u] == NULL) {
-      perror("Error allocating memory for arr[u]:");
-      for (int j = 0; j < u; j++) {
-        free(arr[j]);
-      }
-      free(arr);
-      free(input_cp);
-      return NULL;
     }
     free(arr);
      return(arr);
-    tok = strtok(NULL, delim);
-  }
-  arr[u] = NULL;
-
-  free(input_cp);
-
-  return arr;
 }
