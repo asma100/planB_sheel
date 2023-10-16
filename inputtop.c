@@ -1,5 +1,5 @@
 #include "top.h" 
-void inputtop(char *input, size_t s) {
+char * inputtop(char *input, size_t s) {
   ssize_t checkline;
   const char *delim = " \t\n";
 
@@ -23,10 +23,7 @@ void inputtop(char *input, size_t s) {
     free(input);
     exit(EXIT_SUCCESS);
   }
-  else
-  {
-     Parse(input,delim);
-  }
+  
 
    free(input);
 }
