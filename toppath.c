@@ -1,4 +1,5 @@
 #include "top.h"
+
 char *finding_path(char *command) {
   char *thepath, *pc, *pt, *fp;
   int cmd_len, d_len;
@@ -9,6 +10,8 @@ char *finding_path(char *command) {
     pc = strdup(thepath);
     cmd_len = strlen(command);
     pt = strtok(pc, ":");
+    fp = NULL;  
+
     while (pt != NULL) {
       d_len = strlen(pt);
       fp = malloc(cmd_len + d_len + 2);
@@ -32,11 +35,12 @@ char *finding_path(char *command) {
     free(pc);
     if (stat(command, &s_buff) == 0) {
       return (command);
-
     }
   }
 
-  /* Free the memory for the fp variable, even if we are not able to find the command.*/
-  free(fp);
+  /* Free the memory for the fp variable if it was allocated and not used to find the command. */
+  if (fp != NULL) {
+    free(fp);
+  }
   return (NULL);
 }
