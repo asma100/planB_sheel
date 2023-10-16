@@ -1,6 +1,7 @@
 #include "top.h" 
 void inputtop(char *input, size_t s) {
   ssize_t checkline;
+  const char *delim = " \t\n";
 
   checkline = getline(&input, &s, stdin);
   if (checkline == -1) {
