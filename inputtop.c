@@ -1,4 +1,4 @@
-int inputtop (char *input, size_t s){
+void inputtop (char *input, size_t s){
 
 checkline = getline(&input, &s, stdin);
  if (checkline == -1) {
@@ -19,10 +19,7 @@ checkline = getline(&input, &s, stdin);
  }
  else if (strcmp(input, "exit\n") == 0)
  {
- /* user entered "exit", quit program */
- free(input);
- free(input_cp);
- free(argv); 
+
  return (0);
  }
 }
