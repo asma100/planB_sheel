@@ -26,7 +26,7 @@ if (isatty (STDIN_FILENO)) {
  inputtop (input,sizeof(input));
 
 
- topcmd(arr);
+ 
  }
 
  free(input);
