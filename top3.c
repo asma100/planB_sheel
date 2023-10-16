@@ -59,7 +59,7 @@ if (isatty (STDIN_FILENO)) {
   else {
       
       
-       Parse(input,delim);
+       Parse(line,delim);
       
    /* execute command*/
 
