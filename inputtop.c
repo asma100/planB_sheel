@@ -8,7 +8,6 @@ checkline = getline(&input, &s, stdin);
   } else {
   perror("Error reading input:");
   free(input);
-  free(input_cp);
   free(argv);
   return (-1);
  }
