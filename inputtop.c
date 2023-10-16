@@ -1,3 +1,4 @@
+#include "top.h" 
 void inputtop (char *input, size_t s){
 
 checkline = getline(&input, &s, stdin);
