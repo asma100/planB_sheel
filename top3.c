@@ -28,7 +28,7 @@ if (isatty (STDIN_FILENO)) {
 
  
  }
- free(fp);
+
  free(input);
  free(input_cp);
 } else {
