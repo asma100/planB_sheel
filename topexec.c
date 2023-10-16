@@ -9,7 +9,10 @@ void topcmd(char **argv){
 
         /* generate the path to this command before passing it to execve */
         acmd = finding_path(cmd);
-
+   if (acmd == NULL) {
+          perror("Error:");
+          return;
+        }
         /* create a child process to execute the command */
          pid = fork();
         if (pid == -1){
