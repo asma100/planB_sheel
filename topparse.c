@@ -19,7 +19,11 @@ char **Parse(char * input, const char *delim)
         return NULL;
     }
     strcpy(input_cp, input);
-
+  /* Check for an empty input string */
+  if (input[0] == '\0') {
+    free(input_cp);
+    return NULL;
+  }
     tok = strtok(input, delim);
     while (tok != NULL) {
         tok_counter++;
