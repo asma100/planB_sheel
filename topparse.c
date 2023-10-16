@@ -3,6 +3,7 @@ char **Parse(char *input, const char *delim) {
   char *tok;
    int u;
   int j;
+   int tok_counter = 0;
   char *input_cp = strdup(input); 
   if (input_cp == NULL) {
     perror("Error allocating memory for input_cp:");
@@ -10,7 +11,7 @@ char **Parse(char *input, const char *delim) {
   }
 
   
-  int tok_counter = 0;
+ 
   char **arr = NULL;
 
   tok = strtok(input_cp, delim);
