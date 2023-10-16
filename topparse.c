@@ -1,7 +1,12 @@
 #include "top.h" 
 char  **Parse(char * input, const char *delim)
 {
-    
+    char *input_cp = NULL;
+ char *tok;
+ int tok_counter = 0;
+ char **arr = NULL;
+ int u = 0;
+ int j;
     input_cp = malloc(sizeof(char) * (checkline + 1));
  if (input_cp == NULL) {
   perror("Error allocating memory:");
