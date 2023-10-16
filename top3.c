@@ -23,8 +23,8 @@ if (isatty (STDIN_FILENO)) {
 /* display prompt and accept input from user */
  while (1) {
  print_top("top$");
- inputtop (input,sizeof(input));
-
+input= inputtop (input,sizeof(input));
+ Parse(input,delim);
 
  
  }
