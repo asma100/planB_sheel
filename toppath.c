@@ -15,7 +15,7 @@ char *finding_path(char *command) {
    strcpy(fp, pt);
    strcat(fp, "/");
    strcat(fp, command);
-   strcat(fp, "\0");
+   /*strcat(fp, "\0");*/
    if (stat(fp, &s_buff) == 0) {
     free(pc);
     return (fp);
