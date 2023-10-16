@@ -11,8 +11,8 @@ char **Parse(char * input, const char *delim)
     int j;
 
     checkline = getline(&input, &s, stdin);
-strcpy(input_cp, input);
     input_cp = malloc(sizeof(char) * (checkline + 1));
+    strcpy(input_cp, input);
     if (input_cp == NULL) {
         perror("Error allocating memory:");
         free(input);
