@@ -18,6 +18,7 @@ char *finding_path(char *command) {
    /*strcat(fp, "\0");*/
    if (stat(fp, &s_buff) == 0) {
     free(pc);
+    free(fp);
     return (fp);
    } else {
     pt = strtok(NULL, ":");
