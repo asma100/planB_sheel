@@ -15,6 +15,7 @@ void inputtop(char *input, size_t s) {
   } else if (checkline == 1 && input[0] == '\n')
   {
     /* empty input, do nothing*/
+      free(input);
  return;
   }
   else if (strcmp(input, "exit\n") == 0) {
