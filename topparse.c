@@ -9,10 +9,11 @@ char **Parse(char * input, const char *delim)
     char **arr = NULL;
     int u = 0;
     int j;
+    char *input_cp = strdup(input);
 
     checkline = getline(&input, &s, stdin);
-    input_cp = malloc(sizeof(char) * (checkline + 1));
-    strcpy(input_cp, input);
+/* input_cp = malloc(sizeof(char) * (checkline + 1));
+    strcpy(input_cp, input);*/
     if (input_cp == NULL) {
         perror("Error allocating memory:");
         free(input);
