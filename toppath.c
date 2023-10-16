@@ -33,5 +33,5 @@ char *finding_path(char *command) {
  free(fp);
  }
   free(fp);
- return (NULL);
+ return (NULL);
 }
