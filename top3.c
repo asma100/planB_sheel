@@ -44,7 +44,7 @@ input= inputtop (input,sizeof(input));
  /*read each line from standard input*/
  if (checkline == 1 && line[0] == '\n') {
   /* empty line, do nothing*/
-  free(line);
+ 
   continue;
  }
   
