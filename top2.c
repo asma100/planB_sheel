@@ -14,7 +14,7 @@ int _strlen(char *s) {
 
 int main(void) {
  
-
+ char **arr = NULL;
  char *input = NULL;
 char *input_cp = NULL;
  const char *delim = " \t\n";
