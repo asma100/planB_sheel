@@ -60,8 +60,9 @@ char **Parse(char * input, const char *delim)
     arr[u] = NULL;
 
     free(input_cp);
-   free(input);
-  
+
+    **free(input);**
+
     topcmd(arr);
      for (i = 0; i < u; i++) {
         free(arr[i]);
