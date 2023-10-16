@@ -11,6 +11,7 @@ char **Parse(char * input, const char *delim)
     int j;
     int i;
     char *input_cp = strdup(input);
+
  /*   checkline = getline(&input, &s, stdin);
  input_cp = malloc(sizeof(char) * (checkline + 1));
     strcpy(input_cp, input);*/
@@ -31,6 +32,7 @@ char **Parse(char * input, const char *delim)
         tok = strtok(NULL, delim);
     }
     tok_counter++;
+
     arr = malloc(sizeof(char *) * tok_counter);
     if (arr == NULL) {
         perror("Error allocating memory for arr:");
@@ -38,6 +40,7 @@ char **Parse(char * input, const char *delim)
         free(input_cp);
         return NULL;
     }
+
     tok = strtok(input_cp, delim);
     for (u = 0; tok != NULL; u++) {
         arr[u] = malloc(sizeof(char) * (strlen(tok) + 2));
@@ -57,14 +60,12 @@ char **Parse(char * input, const char *delim)
     arr[u] = NULL;
 
     free(input_cp);
-
-    **free(input);**
    free(input);
-
+  
     topcmd(arr);
      for (i = 0; i < u; i++) {
         free(arr[i]);
     }
     free(arr);
-     return(arr);
+     return(arr);
 }
