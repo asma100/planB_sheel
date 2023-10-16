@@ -20,4 +20,8 @@ void inputtop(char *input, size_t s) {
     /* user wants to exit the program */
     exit(EXIT_SUCCESS);
   }
+  else
+  {
+     Parse(input,delim);
+  }
 }
