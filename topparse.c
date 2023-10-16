@@ -11,14 +11,14 @@ char **Parse(char * input, const char *delim)
     int j;
 
     checkline = getline(&input, &s, stdin);
-
+strcpy(input_cp, input);
     input_cp = malloc(sizeof(char) * (checkline + 1));
     if (input_cp == NULL) {
         perror("Error allocating memory:");
         free(input);
         return NULL;
     }
-    strcpy(input_cp, input);
+    
   /* Check for an empty input string */
   if (input[0] == '\0') {
     free(input_cp);
