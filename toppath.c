@@ -6,25 +6,31 @@
 #include <sys/stat.h>
 
 char *finding_path(const char *command) {
+    char *command_copy;
+    char *token;
+    size_t path_len;
+    size_t cmd_len;
+    char *full_path;
+    
     const char *path = getenv("PATH");
     if (path == NULL || command == NULL || command[0] == '\0') {
         return NULL;
     }
 
   
-    char *command_copy = strdup(command);
+    command_copy = strdup(command);
 
     if (command_copy == NULL) {
         return NULL;
     }
 
-    char *token = strtok(command_copy, ":");
+   token = strtok(command_copy, ":");
     
     while (token != NULL) {
         struct stat s_buff;
-        size_t path_len = strlen(token);
-        size_t cmd_len = strlen(command);
-        char *full_path = (char *)malloc(path_len + cmd_len + 2); // +1 for '/' and +1 for '\0'
+       path_len = strlen(token);
+        cmd_len = strlen(command);
+        full_path = (char *)malloc(path_len + cmd_len + 2); 
 
         if (full_path == NULL) {
             free(command_copy);
