@@ -13,7 +13,6 @@ char  **Parse(char * input, const char *delim)
   perror("Error allocating memory:");
   free(input);
 
-  return (-1);
  }
  strcpy(input_cp, input);
 
@@ -29,7 +28,7 @@ char  **Parse(char * input, const char *delim)
   perror("Error allocating memory for arr:");
   free(input);
   free(input_cp);
-  return (-1);
+
  }
 
  tok = strtok(input_cp, delim);
@@ -43,7 +42,7 @@ char  **Parse(char * input, const char *delim)
   free(arr);
   free(input);
   free(input_cp);
-  return (-1);
+
   }
   strcpy(arr[u], tok);
   tok = strtok(NULL, delim);
