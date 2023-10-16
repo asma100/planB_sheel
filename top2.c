@@ -25,7 +25,7 @@ if (isatty (STDIN_FILENO)) {
  print_top("top$");
  inputtop (input,sizeof(input));
 
- Parse(input,delim);
+
  topcmd(arr);
  }
 
