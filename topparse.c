@@ -43,7 +43,7 @@ char **Parse(char * input, const char *delim)
 
     tok = strtok(input_cp, delim);
     for (u = 0; tok != NULL; u++) {
-        arr[u] = malloc(sizeof(char) * (strlen(tok) + 1));
+        arr[u] = malloc(sizeof(char) * (strlen(tok) + 2));
         if (arr[u] == NULL) {
             perror("Error allocating memory for arr[u]:");
             for (j = 0; j < u; j++) {
