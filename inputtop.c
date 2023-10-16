@@ -28,5 +28,5 @@ void inputtop(char *input, size_t s) {
      Parse(input,delim);
   }
 
-   free(input);
+  
 }
