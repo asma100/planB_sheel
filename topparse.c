@@ -5,7 +5,7 @@ char  **Parse(char * input, const char *delim)
  if (input_cp == NULL) {
   perror("Error allocating memory:");
   free(input);
-  free(argv);
+
   return (-1);
  }
  strcpy(input_cp, input);
@@ -17,9 +17,9 @@ char  **Parse(char * input, const char *delim)
  }
  tok_counter++;
 
- argv = malloc(sizeof(char *) * tok_counter);
- if (argv == NULL) {
-  perror("Error allocating memory for argv:");
+ arr = malloc(sizeof(char *) * tok_counter);
+ if (arr == NULL) {
+  perror("Error allocating memory for arr:");
   free(input);
   free(input_cp);
   return (-1);
@@ -27,19 +27,19 @@ char  **Parse(char * input, const char *delim)
 
  tok = strtok(input_cp, delim);
  for (u = 0; tok != NULL; u++) {
-  argv[u] = malloc(sizeof(char) * (strlen(tok) + 1));
-  if (argv[u] == NULL) {
-  perror("Error allocating memory for argv[u]:");
+  arr[u] = malloc(sizeof(char) * (strlen(tok) + 1));
+  if (arr[u] == NULL) {
+  perror("Error allocating memory for arr[u]:");
   for (j = 0; j < u; j++) {
-   free(argv[j]);
+   free(arr[j]);
   }
-  free(argv);
+  free(arr);
   free(input);
   free(input_cp);
   return (-1);
   }
-  strcpy(argv[u], tok);
+  strcpy(arr[u], tok);
   tok = strtok(NULL, delim);
  }
- argv[u] = NULL;
+ arr[u] = NULL;
 }
