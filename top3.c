@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <unistd.h>
 #include "top.h"
+
 int _strlen(char *s) {
  int cou = 0;
  while (*s != '\0') {
@@ -10,6 +11,7 @@ int _strlen(char *s) {
  }
  return (cou);
 }
+
 int main(void) {
  
  char **arr = NULL;
@@ -24,33 +26,38 @@ if (isatty (STDIN_FILENO)) {
  inputtop (input,sizeof(input));
 
 
+ 
  }
- free(fp);
 
  free(input);
  free(input_cp);
 } else {
 /* shell is running in non-interactive mode */
 /* execute commands from script or batch file*/
+
+
  char *line = NULL;
  size_t len = 0;
  ssize_t checkline;
+
  while ((checkline = getline(&line, &len, stdin)) != -1) {
-  /*read each line from standard input*/
-  if (checkline == 1 && line[0] == '\n') {
-   /* empty line, do nothing*/
-   continue;
-  }
+ /*read each line from standard input*/
+ if (checkline == 1 && line[0] == '\n') {
+  /* empty line, do nothing*/
+  continue;
+ }
   
-  else {
-      
-      
-       Parse(line,delim);
-      
-   /* execute command*/
-   topcmd(arr);
+ else {
+    
+    
+    Parse(line,delim);
+    
+  /* execute command*/
+
+  topcmd(arr);
 }
 }
 }
+
  return (0);
 }
