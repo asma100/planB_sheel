@@ -29,5 +29,6 @@ char *finding_path(char *command) {
       return (command);
     }
   }
+   free(fp);
   return (NULL);
 }
