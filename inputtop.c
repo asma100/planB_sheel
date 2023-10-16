@@ -22,6 +22,6 @@ char *inputtop(char *input, size_t s) {
     input = NULL;
     exit(EXIT_SUCCESS);
   }
-free(input);
+
   return (input);
 }
