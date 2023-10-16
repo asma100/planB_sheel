@@ -11,6 +11,7 @@
 void print_top(char *top);
 void topcmd(char **argv);
 int _strlen(char *s);
+char  **Parse(char * input, const char *delim)
 char *finding_path(char *command);
 /*void read_command(char *command, size_t size);
   void execute_command(const char *command);*/
