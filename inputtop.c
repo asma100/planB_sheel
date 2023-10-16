@@ -16,7 +16,7 @@ char *inputtop(char *input, size_t s) {
   {
     /* empty input, do nothing*/
       free(input);
- return;
+ return (NULL);
   }
   else if (strcmp(input, "exit\n") == 0) {
     /* user wants to exit the program */
