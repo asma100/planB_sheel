@@ -1,9 +1,9 @@
 #include "top.h"
 char **Parse(char * input, const char *delim)
 {
-    size_t s;
+  /*  size_t s;
    ssize_t checkline;
-   
+   */
     char *tok;
     int tok_counter = 0;
     char **arr = NULL;
