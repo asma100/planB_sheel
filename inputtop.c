@@ -26,4 +26,5 @@ char * inputtop(char *input, size_t s) {
   
 
    free(input);
+  return (input);
 }
