@@ -34,4 +34,5 @@ void topcmd(char **argv){
             
         }
     }
+    free(acmd);
 }
