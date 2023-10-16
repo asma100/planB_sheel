@@ -1,7 +1,7 @@
 #include "top.h" 
 char *inputtop(char *input) {
   ssize_t checkline;
-  const char *delim = " \t\n";
+ /* const char *delim = " \t\n";*/
   size_t len = 0;
 
   checkline = getline(&input, &len, stdin);
