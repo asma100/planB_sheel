@@ -42,4 +42,6 @@ char  **Parse(char * input, const char *delim)
   tok = strtok(NULL, delim);
  }
  arr[u] = NULL;
+
+    return (arr);
 }
