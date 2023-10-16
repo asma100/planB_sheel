@@ -16,7 +16,7 @@ int main(void) {
  
 
  char *input = NULL;
-
+char *input_cp = NULL;
  const char *delim = " \t\n";
 if (isatty (STDIN_FILENO)) {
 /* shell is running in interactive mode */
