@@ -13,7 +13,7 @@ int _strlen(char *s) {
 }
 
 int main(void) {
- 
+ char *fp=NULL;
  char **arr = NULL;
  char *input = NULL;
 char *input_cp = NULL;
@@ -28,7 +28,7 @@ input= inputtop (input,sizeof(input));
 
  
  }
-
+ free(fp);
  free(input);
  free(input_cp);
 } else {
