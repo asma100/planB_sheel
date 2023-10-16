@@ -8,7 +8,6 @@ checkline = getline(&input, &s, stdin);
   } else {
   perror("Error reading input:");
   free(input);
-  return (-1);
  }
  }
   else if (checkline == 1 && input[0] == '\n')
@@ -19,6 +18,5 @@ checkline = getline(&input, &s, stdin);
  else if (strcmp(input, "exit\n") == 0)
  {
 
- return (0);
  }
 }
