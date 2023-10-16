@@ -13,7 +13,7 @@ checkline = getline(&input, &s, stdin);
   else if (checkline == 1 && input[0] == '\n')
  {
  /* empty input, do nothing*/
- continue;
+ print_top("top$");
  }
  else if (strcmp(input, "exit\n") == 0)
  {
