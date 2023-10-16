@@ -3,6 +3,7 @@ char **Parse(char *input, const char *delim) {
   char *tok;
    int u;
   int j;
+    char **arr = NULL;
    int tok_counter = 0;
   char *input_cp = strdup(input); 
   if (input_cp == NULL) {
@@ -12,7 +13,7 @@ char **Parse(char *input, const char *delim) {
 
   
  
-  char **arr = NULL;
+
 
   tok = strtok(input_cp, delim);
   while (tok != NULL) {
