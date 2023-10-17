@@ -49,11 +49,11 @@ input= inputtop (input,sizeof(input));
  else {
     
     
-    /*Parse(line,delim); */
+    Parse(line,delim); 
     
   /* execute command*/
 
- topcmd(arr);
+/* topcmd(arr);*/
 
   free(line);
   
