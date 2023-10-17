@@ -1,11 +1,11 @@
 #include "top.h"
-size_t _strlen(const char *str) {
-  size_t len = 0;
-  while (*str != '\0') {
-    len++;
-    str++;
-  }
-  return len;
+size_t _strlen(char *s) {
+ int cou = 0;
+ while (*s != '\0') {
+ s++;
+ cou++;
+ }
+ return (cou);
 }
 
 void print_error(const char *message) {
