@@ -15,6 +15,7 @@ int _strlen(char *s) {
 int main(void) {
  char **arr = NULL;
  char *input = NULL;
+ int i;
 /*char *input_cp = NULL;*/
  const char *delim = " \t\n";
 if (isatty (STDIN_FILENO)) {
@@ -49,14 +50,23 @@ input= inputtop (input,sizeof(input));
  else {
     
     
-    Parse(line,delim);
+  /*  Parse(line,delim); */
     
   /* execute command*/
 
-  /*topcmd(arr);*/
+ /* topcmd(arr);*/
+                char **arr = Parse(line, delim);
+                if (arr) {
+                    topcmd(arr);
+                    
+                    for ( i = 0; arr[i] != NULL; i++) {
+                        free(arr[i]);
+                    }
+                    free(arr);
+                }
+  
 }
 }
 }
-topcmd(arr);
  return (0);
 }
