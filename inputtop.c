@@ -1,6 +1,6 @@
 #include "top.h" 
 char *inputtop(char *input, size_t s) {
-ssize checkline;
+ssize_t checkline;
 
 checkline = getline(&input, &s, stdin);
    if (feof(stdin)) {
