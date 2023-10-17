@@ -53,10 +53,10 @@ input= inputtop (input,sizeof(input));
     
   /* execute command*/
 
-  topcmd(arr);
+  /*topcmd(arr);*/
 }
 }
 }
-
+topcmd(arr);
  return (0);
 }
