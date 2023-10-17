@@ -11,7 +11,7 @@ ssize_t checkline;
       free(input);
       exit(EXIT_FAILURE);
     }}
-  } else if (checkline == 1 && input[0] == '\n') {
+  else if (checkline == 1 && input[0] == '\n') {
     /* empty input, do nothing*/
     free(input);
     input = NULL;
