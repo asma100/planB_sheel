@@ -3,10 +3,10 @@ char *inputtop(char *input, size_t s) {
   ssize_t checkline;
 
   checkline = getline(&input, &s, stdin);
-  if (checkline == -1) {
-    if (errno == EOF) {
-      printf("The user has finished entering input.\n");
-    } else {
+   if (feof(stdin)) {
+            printf("\n");
+            exit(EXIT_SUCCESS);
+        } else {
       perror("Error reading input:");
       free(input);
       exit(EXIT_FAILURE);
