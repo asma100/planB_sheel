@@ -1,8 +1,8 @@
 #include "top.h" 
 char *inputtop(char *input, size_t s) {
-  ssize_t checkline;
+ 
 
-  checkline = getline(&input, &s, stdin);
+ getline(&input, &s, stdin);
    if (feof(stdin)) {
             printf("\n");
             exit(EXIT_SUCCESS);
