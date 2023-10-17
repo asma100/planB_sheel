@@ -22,8 +22,8 @@ void topcmd(char **argv){
         }
         else if (pid == 0){ /* child process */
             /* execute the actual command with execve */
-            if (cmd=="env"){
-                env_builtin(cmd);
+            if(strcmp(cmd, "env") == 0){
+                env_builtin();
             }   
             else if (execve(acmd, argv, NULL) == -1){
                 perror("Error:");
