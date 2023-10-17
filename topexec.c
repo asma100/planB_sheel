@@ -2,7 +2,6 @@
 void topcmd(char **argv){
     char *cmd = NULL, *acmd = NULL;
     int i;
-    int u;
     pid_t pid ;
    if (argv){
         /* get the command */
@@ -37,7 +36,7 @@ void topcmd(char **argv){
         }
     }
     free(acmd);
-    for (i = 0; i < u; i++) {
+    for (i = 0; i < argv[i]; i++) {
         free(argv[i]);
     }
     free(argv);
