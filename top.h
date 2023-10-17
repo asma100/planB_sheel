@@ -10,7 +10,6 @@
 #include <errno.h>
 void print_top(char *top);
 void topcmd(char **argv);
-int _strlen(char *s);
 void Parse(char * input, const char *delim);
 char *finding_path(char *command);
 char *inputtop (char *input, size_t s);
