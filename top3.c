@@ -3,14 +3,7 @@
 #include <unistd.h>
 #include "top.h"
 
-int _strlen(char *s) {
- int cou = 0;
- while (*s != '\0') {
- s++;
- cou++;
- }
- return (cou);
-}
+
 
 int main(void) {
 char **arr = NULL;
