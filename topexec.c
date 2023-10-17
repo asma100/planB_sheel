@@ -35,8 +35,10 @@ void topcmd(char **argv){
             
         }
     }
+
+    if((cmd == acmd)!){
     free(acmd);    
-        
+    }
                         
              
                 
