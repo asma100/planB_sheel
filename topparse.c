@@ -7,7 +7,7 @@ char **Parse(char * input, const char *delim)
     char *tok;
     int tok_counter = 0;
     char **arr = NULL;
-    int u = 0;
+   /* int u = 0; */
     int j;
    /*int i;*/
     char *input_cp = strdup(input);
@@ -47,8 +47,8 @@ char **Parse(char * input, const char *delim)
         if (arr[u] == NULL) {
             perror("Error allocating memory for arr[u]:");
            /* for (j = 0; j < u; j++) {
-                free(arr[j]);*/
-            }
+                free(arr[j]);
+            }*/
             free(arr);
             free(input);
             free(input_cp);
