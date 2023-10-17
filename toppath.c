@@ -28,9 +28,7 @@ int cmd_len, d_len;
   
   if (stat(command, &s_buff) == 0) {
    return (command);
-  } else {
-    free(fp); 
-  }
+
  }
 
  return (NULL);
