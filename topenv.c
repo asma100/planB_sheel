@@ -1,10 +1,8 @@
 #include "top.h"
-void env_builtin(char **argv) {
-
- extern char **environ;
-  
-  while (*envp != NULL) {
-    printf("%s\n", *envp);
-    envp++;
-  }
+void env_builtin() {
+   extern char **environ;
+ char **env;
+    for (env = environ; *env != NULL; env++) {
+        printf("%s\n", *env);
+    }
 }
