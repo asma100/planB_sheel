@@ -8,7 +8,7 @@ char **Parse(char * input, const char *delim)
     int tok_counter = 0;
     char **arr = NULL;
    /* int u = 0; */
-    int j;
+    /*int j;*/
    /*int i;*/
     char *input_cp = strdup(input);
 
