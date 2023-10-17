@@ -9,7 +9,7 @@ char **Parse(char * input, const char *delim)
     char **arr = NULL;
     int u = 0;
     int j;
-   int i;
+  /* int i; */
     char *input_cp = strdup(input);
 
  /*   checkline = getline(&input, &s, stdin);
@@ -61,11 +61,11 @@ char **Parse(char * input, const char *delim)
 
   
     topcmd(arr);
- 
+ /*
      for (i = 0; i < u; i++) {
         free(arr[i]);
     }
-    free(arr);
+    free(arr);*/
    free(input_cp);
      return(arr);
 
