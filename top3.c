@@ -28,7 +28,7 @@ input= inputtop (input,sizeof(input));
  
  }
  free(input);
- free(input_cp);
+/* free(input_cp);*/
 } else {
 /* shell is running in non-interactive mode */
 /* execute commands from script or batch file*/
