@@ -4,7 +4,7 @@
 char *tok;
 int tok_counter = 0;
 char **arr = NULL;
-int u, i, j; 
+int u, i, j;
 char *input_cp = strdup(input);
 if (input_cp == NULL)
 {
@@ -25,7 +25,8 @@ tok = strtok(NULL, delim);
 }
 tok_counter++;
 arr = malloc(sizeof(char *) * tok_counter);
-if (arr == NULL) {
+if (arr == NULL)
+{
 perror("Error allocating memory for arr:");
 free(input);
 free(input_cp);
@@ -55,7 +56,7 @@ topcmd(arr);
 for (i = 0; i < u; i++)
 {
 free(arr[i]);
-}  
+}
 free(arr);
 free(input_cp);
 }
