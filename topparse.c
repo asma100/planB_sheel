@@ -18,13 +18,13 @@
     if (input_cp == NULL) {
         perror("Error allocating memory:");
         free(input);
-        return NULL;
+        return;
     }
     
   /* Check for an empty input string */
   if (input[0] == '\0') {
     free(input_cp);
-    return NULL;
+    return ;
   }
     tok = strtok(input, delim);
     while (tok != NULL) {
@@ -38,7 +38,7 @@
         perror("Error allocating memory for arr:");
         free(input);
         free(input_cp);
-        return NULL;
+        return ;
     }
 
     tok = strtok(input_cp, delim);
@@ -52,7 +52,7 @@
             free(arr);
             free(input);
             free(input_cp);
-            return NULL;
+            return;
         }
         strcpy(arr[u], tok);
         tok = strtok(NULL, delim);
