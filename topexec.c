@@ -2,6 +2,7 @@
 void topcmd(char **argv){
     char *cmd = NULL, *acmd = NULL;
     int i;
+    int u;
     pid_t pid ;
    if (argv){
         /* get the command */
