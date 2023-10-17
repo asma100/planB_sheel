@@ -11,4 +11,5 @@ size_t _strlen(const char *s) {
 void print_error(const char *message) {
   size_t len = strlen(message);
   write(STDERR_FILENO, message, len);
+ exit(EXIT_FAILURE)
 }
