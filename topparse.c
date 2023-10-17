@@ -46,8 +46,8 @@ char **Parse(char * input, const char *delim)
         arr[u] = malloc(sizeof(char) * (strlen(tok) + 2));
         if (arr[u] == NULL) {
             perror("Error allocating memory for arr[u]:");
-            for (j = 0; j < u; j++) {
-                free(arr[j]);
+           /* for (j = 0; j < u; j++) {
+                free(arr[j]);*/
             }
             free(arr);
             free(input);
