@@ -13,7 +13,7 @@ int _strlen(char *s) {
 }
 
 int main(void) {
- char **arr = NULL;
+/* char **arr = NULL;*/
  char *input = NULL;
  int i;
 /*char *input_cp = NULL;*/
