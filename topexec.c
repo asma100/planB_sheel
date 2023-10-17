@@ -40,7 +40,7 @@ void topcmd(char **argv){
   }
  }
 
- if(acmd != acmd){ // remove this line
+ if(cmd != acmd){ 
  free(acmd);   
  }
        
