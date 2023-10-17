@@ -54,7 +54,7 @@ input= inputtop (input,sizeof(input));
   /* execute command*/
 
 /* topcmd(arr);*/
-
+free(arr);
   free(line);
   
 }
