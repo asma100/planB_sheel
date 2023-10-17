@@ -66,7 +66,8 @@ char **Parse(char * input, const char *delim)
         free(arr[i]);
     }
     free(arr);
+   free(input_cp);
      return(arr);
-  free(input_cp);
+
  
 }
