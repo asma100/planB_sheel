@@ -1,6 +1,7 @@
 #include "top.h"
 void topcmd(char **argv){
     char *cmd = NULL, *acmd = NULL;
+ 
   
     pid_t pid ;
    if (argv){
@@ -21,10 +22,9 @@ void topcmd(char **argv){
         }
         else if (pid == 0){ /* child process */
             /* execute the actual command with execve */
-            if (cmd==env){
+            if (cmd=='env'){
                 env_builtin(cmd);
-            };
-                
+            }   
             else if (execve(acmd, argv, NULL) == -1){
                 perror("Error:");
                 exit(EXIT_FAILURE);
