@@ -1,5 +1,5 @@
  #include "top.h"
-char **Parse(char * input, const char *delim)
+ void Parse(char * input, const char *delim)
 {
   /*  size_t s;
    ssize_t checkline;
@@ -67,10 +67,10 @@ char **Parse(char * input, const char *delim)
     }
    
 
-
+     free(arr);
  
    free(input_cp);
-     return(arr);
+
 
  
 }
