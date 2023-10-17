@@ -65,6 +65,10 @@ char **Parse(char * input, const char *delim)
     /* for (i = 0; i < u; i++) {
         free(arr[i]);
     }*/
+   
+        for ( i = 0; argv[i] != NULL; i++) {
+                        free(argv[i]);
+                    }
     free(arr); 
  arr = NULL;
  
