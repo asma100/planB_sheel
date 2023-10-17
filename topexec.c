@@ -1,7 +1,7 @@
 #include "top.h"
 void topcmd(char **argv){
     char *cmd = NULL, *acmd = NULL;
-    int i;
+  
     pid_t pid ;
    if (argv){
         /* get the command */
