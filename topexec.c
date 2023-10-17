@@ -1,6 +1,7 @@
 #include "top.h"
 void topcmd(char **argv){
     char *cmd = NULL, *acmd = NULL;
+    int i;
     pid_t pid ;
    if (argv){
         /* get the command */
@@ -35,4 +36,8 @@ void topcmd(char **argv){
         }
     }
     free(acmd);
+    for (i = 0; i < u; i++) {
+        free(argv[i]);
+    }
+    free(argv);
 }
