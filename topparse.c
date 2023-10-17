@@ -67,7 +67,7 @@
     }  
    
 
-     /*free(arr);*/
+    free(arr);
  
    free(input_cp);
 
