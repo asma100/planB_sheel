@@ -39,6 +39,5 @@ perror("Error:");
 }
 }
 if(cmd != acmd)
-{
 free(acmd);  
 }
