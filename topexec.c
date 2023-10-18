@@ -3,7 +3,7 @@ void topcmd(char **argv)
 {
     char *cmd = NULL, *acmd = NULL;
     pid_t pid;
-    int fd_in, fd_out;
+    int fd_in, fd_out, i;
 
     if (argv)
     {
@@ -15,8 +15,8 @@ void topcmd(char **argv)
             return;
         }
 
-        // check for input/output redirection symbols
-        for (int i = 1; argv[i] != NULL; i++) {
+        /*check for input/output redirection symbols*/
+        for ( i = 1; argv[i] != NULL; i++) {
             if (strcmp(argv[i], "<") == 0) {
                 // redirect input from file
                 fd_in = open(argv[i+1], O_RDONLY);
@@ -29,7 +29,7 @@ void topcmd(char **argv)
                 argv[i] = NULL;
                 argv[i+1] = NULL;
             } else if (strcmp(argv[i], ">") == 0) {
-                // redirect output to file
+                /* redirect output to file*/
                 fd_out = open(argv[i+1], O_WRONLY | O_CREAT | O_TRUNC, S_IRUSR | S_IWUSR | S_IRGRP | S_IROTH);
                 if (fd_out == -1) {
                     perror("Error:");
