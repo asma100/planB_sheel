@@ -18,7 +18,7 @@ void topcmd(char **argv)
         /*check for input/output redirection symbols*/
         for ( i = 1; argv[i] != NULL; i++) {
             if (strcmp(argv[i], "<") == 0) {
-                // redirect input from file
+                /* redirect input from file*/
                 fd_in = open(argv[i+1], O_RDONLY);
                 if (fd_in == -1) {
                     perror("Error:");
