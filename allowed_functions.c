@@ -14,7 +14,7 @@ void print_error(const char *message) {
 
 }
 
-void parsetok(char *input_cp, const char *delim)
+void parsetok(char *input_cp,char *input,const char *delim)
 {
 char *tok;
 char *input;
