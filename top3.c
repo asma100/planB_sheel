@@ -4,10 +4,10 @@
 #include "top.h"
 int main(void)
 {
-char **arr = NULL;
+/*char **arr = NULL;*/
 char *input = NULL;
 /*char *input_cp = NULL;*/
-const char *delim = " \t\n";
+/*const char *delim = " \t\n";*/
 if (isatty (STDIN_FILENO))
 {
 /* shell is running in interactive mode */
@@ -25,7 +25,7 @@ else
 char *line = NULL;
 size_t len = 0;
 ssize_t checkline;
-checkline = getline(&line, &len, stdin;
+checkline = getline(&line, &len, stdin);
   if (checkline == -1) {
    if (feof(stdin)) {
             printf("\n");
