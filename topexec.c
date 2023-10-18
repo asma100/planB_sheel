@@ -20,7 +20,7 @@ void topcmd(char **arr)
         }
 
         /*check for input/output redirection symbols*/
-        for ( i = 1; arrri] != NULL; i++) {
+        for ( i = 1; arr[i] != NULL; i++) {
             if (strcmp(arr[i], "<") == 0) {
                 /* redirect input from file*/
                 fd_in = open(arr[i+1], O_RDONLY);
