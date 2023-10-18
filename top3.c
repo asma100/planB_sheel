@@ -26,7 +26,7 @@ if (isatty (STDIN_FILENO)) {
 
 
  char *line = NULL;
- size_t len = 0;
+
 
 
 inputtop (input,sizeof(line));
