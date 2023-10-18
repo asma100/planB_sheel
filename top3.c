@@ -4,10 +4,10 @@
 #include "top.h"
 int main(void)
 {
-/*char **arr = NULL;*/
+char **arr = NULL;
 char *input = NULL;
 /*char *input_cp = NULL;*/
-/*const char *delim = " \t\n";*/
+const char *delim = " \t\n";
 if (isatty (STDIN_FILENO))
 {
 /* shell is running in interactive mode */
@@ -44,7 +44,7 @@ if (checkline == 1 && line[0] == '\n')
 free(line);
 continue;
 }
-  else if (strcmp(linet, "exit\n") == 0) {
+  else if (strcmp(line, "exit\n") == 0) {
     /* user wants to exit the program */
     free(line);
     line= NULL;
