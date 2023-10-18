@@ -25,7 +25,17 @@ else
 char *line = NULL;
 size_t len = 0;
 ssize_t checkline;
-while ((checkline = getline(&line, &len, stdin)) != -1)
+checkline = getline(&line, &len, stdin;
+  if (checkline == -1) {
+   if (feof(stdin)) {
+            printf("\n");
+            exit(EXIT_SUCCESS);
+        } else {
+      perror("Error reading input:");
+      free(line);
+      exit(EXIT_FAILURE);
+    }}
+while (checkline != -1)
 {
 /*read each line from standard input*/
 if (checkline == 1 && line[0] == '\n')
