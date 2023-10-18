@@ -58,16 +58,9 @@ int main(void)
                 line = NULL;
                 exit(EXIT_SUCCESS);
             }
-            else
-            {
-                if (line[0] != '\0') {
-                    Parse(line, delim);
-                }
-                free(arr);
-                free(line);
-            }
+            
 
-            checkline = getline(&line, &len, stdin);
+           
         }
     }
 
