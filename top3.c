@@ -27,7 +27,7 @@ if (isatty (STDIN_FILENO)) {
 
 
 
-while (getline(&input, &s, stdin) != -1)
+while (1)
  {
 inputtop (input,sizeof(input));
 }
