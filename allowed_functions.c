@@ -14,7 +14,8 @@ void print_error(const char *message) {
 
 }
 
-
+char **parsetok(char * input_cp, const char *delim))
+{
 tok = strtok(input_cp, delim);
 for (u = 0; tok != NULL; u++)
 {
@@ -31,4 +32,6 @@ return;
 }
 strcpy(arr[u], tok);
 tok = strtok(NULL, delim);
+}
+ retrun (arr);
 }
