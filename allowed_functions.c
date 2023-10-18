@@ -28,7 +28,7 @@ free(arr[j]);
 free(arr);
 free(input);
 free(input_cp);
-return;
+return();
 }
 strcpy(arr[u], tok);
 tok = strtok(NULL, delim);
