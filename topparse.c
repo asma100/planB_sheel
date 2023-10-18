@@ -1,11 +1,21 @@
  #include "top.h"
-void Parse(char * input, const char *delim)
+ void Parse(char * input, const char *delim)
 {
 char *tok;
 char **arr = NULL;
 int u, i, j, tok_counter = 0;
 char *input_cp = strdup(input);
-parsetok(input_cp, input);
+if (input_cp == NULL)
+{
+perror("Error allocating memory:");
+free(input);
+return;
+}
+if (input[0] == '\0')
+{
+free(input_cp);
+return ;
+}
 tok = strtok(input, delim);
 while (tok != NULL)
 {
