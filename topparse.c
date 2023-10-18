@@ -23,7 +23,7 @@
     
   /* Check for an empty input string */
   if (input[0] == '\0') {
-    free(input_cp);
+
     return ;
   }
     tok = strtok(input, delim);
