@@ -8,7 +8,7 @@
 int main(void) {
  char *input = NULL;
 /*char *input_cp = NULL;*/
- size_t s;
+
 if (isatty (STDIN_FILENO)) {
 /* shell is running in interactive mode */
 /* display prompt and accept input from user */
