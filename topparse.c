@@ -1,5 +1,5 @@
  #include "top.h"
- void Parse(char * input, const char *delim)
+void Parse(char * input, const char *delim)
 {
 char *tok;
 char **arr = NULL;
