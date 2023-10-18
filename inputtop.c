@@ -19,10 +19,8 @@ char *inputtop(char *input, size_t s)
     }
     else if (checkline == 1 && input[0] == '\n')
     {
-        /* empty input, return an empty string */
-        free(input);
-        input = strdup("");
-        return (input);
+
+        return (NULL);
     }
     else if (strcmp(input, "exit\n") == 0)
     {
