@@ -13,3 +13,22 @@ void print_error(const char *message) {
   write(STDERR_FILENO, message, len);
 
 }
+
+
+tok = strtok(input_cp, delim);
+for (u = 0; tok != NULL; u++)
+{
+arr[u] = malloc(sizeof(char) * (strlen(tok) + 2));
+if (arr[u] == NULL)
+{
+perror("Error allocating memory for arr[u]:");
+for (j = 0; j < u; j++)
+free(arr[j]);
+free(arr);
+free(input);
+free(input_cp);
+return;
+}
+strcpy(arr[u], tok);
+tok = strtok(NULL, delim);
+}
