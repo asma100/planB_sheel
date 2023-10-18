@@ -35,5 +35,4 @@ return ;
 }
 parsetok(input_cp, input, delim);
 
-free(input);
 }
