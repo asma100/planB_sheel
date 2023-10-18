@@ -7,8 +7,8 @@ void topcmd(char **arr)
 
     if (arr)
     {     
-          if (arr[0] == '\0') {
-    free(input_cp);
+          if (*arr[0] == '\0') {
+    free(arr);
     return ;
   }
         cmd = arr[0];
