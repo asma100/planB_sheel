@@ -35,5 +35,6 @@ return(NULL);
 
 tok = strtok(NULL, delim);
 }
+arr[u] = NULL;
  return (arr);
 }
