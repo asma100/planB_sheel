@@ -16,6 +16,7 @@ char *inputtop (char *input, size_t s);
 void env_builtin();
 void print_error(const char *message);
 size_t _strlen(const char *s);
+void parsetok(char *input_cp, const char *delim);
 /*void read_command(char *command, size_t size);
   void execute_command(const char *command);*/
 
