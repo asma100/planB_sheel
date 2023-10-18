@@ -35,5 +35,5 @@ return(NULL);
 strcpy(arr[u], tok);
 tok = strtok(NULL, delim);
 }
- retrun (arr);
+ return (arr);
 }
