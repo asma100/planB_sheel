@@ -19,7 +19,7 @@ char *inputtop(char *input, size_t s)
     }
     else if (checkline == 1 && input[0] == '\n')
     {
-
+        free(input);
         return (NULL);
     }
     else if (strcmp(input, "exit\n") == 0)
