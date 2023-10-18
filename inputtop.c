@@ -23,6 +23,14 @@ ssize_t checkline;
     input = NULL;
     exit(EXIT_SUCCESS);
   }
+ else if (strcmp(input, "env\n")==0)
+ {
+  env_builtin();
+  exit(0);
+ }
+ else
+{
 Parse(input,delim);
+}
  free(input);
 }
