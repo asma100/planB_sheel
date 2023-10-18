@@ -31,7 +31,7 @@ free(input);
 free(input_cp);
 return ;
 }
-parsetok(input_cp,delim)
+parsetok(input_cp,delim);
 arr[u] = NULL;
 topcmd(arr);
 for (i = 0; i < u; i++)
