@@ -32,7 +32,7 @@ free(input);
 free(input_cp);
 return(NULL);
 }
-strcpy(arr[u], tok);
+
 tok = strtok(NULL, delim);
 }
  return (arr);
