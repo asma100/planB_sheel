@@ -5,7 +5,7 @@ char *tok;
 char **arr = NULL;
 int u, i, j, tok_counter = 0;
 char *input_cp = strdup(input);
-parsetok(input_cp, input)
+parsetok(input_cp, input);
 tok = strtok(input, delim);
 while (tok != NULL)
 {
