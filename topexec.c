@@ -32,7 +32,7 @@ void topcmd(char **arr)
                 close(fd_in);
                 arr[i] = NULL;
                 arr[i+1] = NULL;
-            } else if (strcmp(argv[i], ">") == 0) {
+            } else if (strcmp(arr[i], ">") == 0) {
                 /* redirect output to file*/
                 fd_out = open(arr[i+1], O_WRONLY | O_CREAT | O_TRUNC, S_IRUSR | S_IWUSR | S_IRGRP | S_IROTH);
                 if (fd_out == -1) {
