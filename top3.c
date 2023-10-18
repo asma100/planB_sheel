@@ -31,7 +31,6 @@ if (isatty (STDIN_FILENO)) {
 
 inputtop (input,sizeof(line));
 
-free(arr);
 free(line);
 
 
