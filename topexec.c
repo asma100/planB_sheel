@@ -1,13 +1,17 @@
 #include "top.h"
-void topcmd(char **argv)
+void topcmd(char **arr)
 {
     char *cmd = NULL, *acmd = NULL;
     pid_t pid;
     int fd_in, fd_out, i;
 
-    if (argv)
-    {
-        cmd = argv[0];
+    if (arr)
+    {     
+          if (arr[0] == '\0') {
+    free(input_cp);
+    return ;
+  }
+        cmd = arr[0];
         acmd = finding_path(cmd);
         if (acmd == NULL)
         {
@@ -16,29 +20,29 @@ void topcmd(char **argv)
         }
 
         /*check for input/output redirection symbols*/
-        for ( i = 1; argv[i] != NULL; i++) {
-            if (strcmp(argv[i], "<") == 0) {
+        for ( i = 1; arrri] != NULL; i++) {
+            if (strcmp(arr[i], "<") == 0) {
                 /* redirect input from file*/
-                fd_in = open(argv[i+1], O_RDONLY);
+                fd_in = open(arr[i+1], O_RDONLY);
                 if (fd_in == -1) {
                     perror("Error:");
                     return;
                 }
                 dup2(fd_in, STDIN_FILENO);
                 close(fd_in);
-                argv[i] = NULL;
-                argv[i+1] = NULL;
+                arr[i] = NULL;
+                arr[i+1] = NULL;
             } else if (strcmp(argv[i], ">") == 0) {
                 /* redirect output to file*/
-                fd_out = open(argv[i+1], O_WRONLY | O_CREAT | O_TRUNC, S_IRUSR | S_IWUSR | S_IRGRP | S_IROTH);
+                fd_out = open(arr[i+1], O_WRONLY | O_CREAT | O_TRUNC, S_IRUSR | S_IWUSR | S_IRGRP | S_IROTH);
                 if (fd_out == -1) {
                     perror("Error:");
                     return;
                 }
                 dup2(fd_out, STDOUT_FILENO);
                 close(fd_out);
-                argv[i] = NULL;
-                argv[i+1] = NULL;
+                arr[i] = NULL;
+                arr[i+1] = NULL;
             }
         }
 
@@ -53,7 +57,7 @@ void topcmd(char **argv)
             {
                 env_builtin();
             }
-            else if (execve(acmd, argv, NULL) == -1)
+            else if (execve(acmd, arr, NULL) == -1)
             {
                 perror("Error:");
                 exit(EXIT_FAILURE);
