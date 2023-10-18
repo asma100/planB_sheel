@@ -15,13 +15,8 @@ int main(void)
         while (1)
         {
             print_top("top$");
-            input = inputtop(input, sizeof(input));
-            if (input[0] == '\0') {
-                /* empty input, do nothing */
-                continue;
-            }
-            Parse(input, delim);
-        }
+           inputtop(input, sizeof(input));
+          
         free(input);
     }
     else
