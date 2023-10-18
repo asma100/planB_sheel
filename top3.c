@@ -6,17 +6,15 @@
 
 
 int main(void) {
-char **arr = NULL;
  char *input = NULL;
 /*char *input_cp = NULL;*/
- const char *delim = " \t\n";
 if (isatty (STDIN_FILENO)) {
 /* shell is running in interactive mode */
 /* display prompt and accept input from user */
  while (1) {
  print_top("top$");
-input= inputtop (input,sizeof(input));
- Parse(input,delim);
+ inputtop (input,sizeof(input));
+
 
 
  }
@@ -29,10 +27,10 @@ input= inputtop (input,sizeof(input));
 
  char *line = NULL;
  size_t len = 0;
- ssize_t checkline;
 
-input= inputtop (input,sizeof(line));
- Parse(line,delim);
+
+inputtop (input,sizeof(line));
+
 free(arr);
 free(line);
 
