@@ -17,7 +17,6 @@ void print_error(const char *message) {
 void parsetok(char *input_cp,char *input,const char *delim)
 {
 char *tok;
-char *input;
 char **arr = NULL;
 int u, i, j;
 tok = strtok(input_cp, delim);
