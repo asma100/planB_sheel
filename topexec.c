@@ -9,9 +9,7 @@ void topcmd(char **arr)
     {     
         
         cmd = arr[0];
-            if (strcmp(cmd, "\0") == 0) {
-         return ;
-            }
+         
         acmd = finding_path(cmd);
         if (acmd == NULL)
         {
