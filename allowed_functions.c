@@ -14,32 +14,24 @@ void print_error(const char *message) {
 
 }
 
-void parsetok(char *input_cp,char *input,const char *delim)
+void parsetok(char *input_cp,char *input)
 {
-char *tok;
-char **arr = NULL;
-int u, i, j;
-tok = strtok(input_cp, delim);
-for (u = 0; tok != NULL; u++)
+if (input_cp == NULL)
 {
-arr[u] = malloc(sizeof(char) * (strlen(tok) + 2));
-if (arr[u] == NULL)
-{
- perror("Error allocating memory for arr[u]:");
-for (j = 0; j < u; j++)
-free(arr[j]);
-free(arr);
+perror("Error allocating memory:");
 free(input);
-free(input_cp);
 return;
 }
-
-tok = strtok(NULL, delim);
-}
-arr[u] = NULL;
-topcmd(arr);
-for (i = 0; i < u; i++)
-free(arr[i]);
-free(arr);
+if (input[0] == '\0')
+{
 free(input_cp);
+return ;
 }
+}
+
+void freea(void)
+{
+ 
+}
+
+
