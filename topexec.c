@@ -7,11 +7,11 @@ void topcmd(char **arr)
 
     if (arr)
     {     
-          if (*arr[0] == '\0') {
-  
-    return ;
-  }
+        
         cmd = arr[0];
+          if (cmd == '\0') {
+         return ;
+            }
         acmd = finding_path(cmd);
         if (acmd == NULL)
         {
