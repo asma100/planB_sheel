@@ -42,5 +42,3 @@ if(cmd != acmd)
 {
 free(acmd);  
 }
-acmd = NULL;
-}
