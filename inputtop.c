@@ -5,7 +5,7 @@ ssize_t checkline;
  checkline = getline(&input, &s, stdin);
   if (checkline == -1) {
    if (feof(stdin)) {
-            printf("\n");
+           
             exit(EXIT_SUCCESS);
         } else {
       perror("Error reading input:");
