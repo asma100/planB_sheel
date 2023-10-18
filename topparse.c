@@ -1,11 +1,11 @@
  
 
  #include "top.h"
- void Parse(char * input, const char *delim)
+ void Parse(char *input, const char *delim)
 {
 char *tok;
 char **arr = NULL;
-int u, i, tok_counter = 0;
+int  tok_counter = 0;
 char *input_cp = strdup(input);
 if (input_cp == NULL)
 {
@@ -33,7 +33,7 @@ free(input);
 free(input_cp);
 return ;
 }
-parsetok(input_cp,delim);
+parsetok(input_cp, input, delim);
 
 free(input);
 }
