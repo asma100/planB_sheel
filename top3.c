@@ -8,6 +8,7 @@
 int main(void) {
  char *input = NULL;
 /*char *input_cp = NULL;*/
+ ssize_t s;
 if (isatty (STDIN_FILENO)) {
 /* shell is running in interactive mode */
 /* display prompt and accept input from user */
@@ -26,7 +27,7 @@ if (isatty (STDIN_FILENO)) {
 
 
 
-while (getline(&input, &sizeof(input), stdin)) != -1)
+while (getline(&input, &s, stdin) != -1)
  {
 inputtop (input,sizeof(input));
 }
