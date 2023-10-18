@@ -16,7 +16,7 @@ ssize_t checkline;
     /* empty input, do nothing*/
     free(input);
     input = NULL;
-    return (NULL);
+    return ;
   } else if (strcmp(input, "exit\n") == 0) {
     /* user wants to exit the program */
     free(input);
