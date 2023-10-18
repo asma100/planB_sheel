@@ -14,8 +14,8 @@ if (isatty (STDIN_FILENO))
 while (1)
 {
 print_top("top$");
-input= inputtop (input,sizeof(input));
-Parse(input,delim);
+/*input= */inputtop (input,sizeof(input));
+/*Parse(input,delim);*/
 }
 free(input);
 }
