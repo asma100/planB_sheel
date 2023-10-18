@@ -4,10 +4,10 @@
 #include "top.h"
 
 int main(void)
-{
-    char **arr = NULL;
-    char *input = NULL;
-    const char *delim = " \t\n";
+{  char *input = NULL;
+  /*  char **arr = NULL;
+  
+    const char *delim = " \t\n";*/
 
     if (isatty(STDIN_FILENO))
     {
