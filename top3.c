@@ -26,7 +26,8 @@ if (isatty (STDIN_FILENO)) {
 
 
 
-
+while (getline(&input, &sizeof(input), stdin)) != -1))
+ {
 
 
 inputtop (input,sizeof(input));
@@ -35,5 +36,6 @@ free(input);
 
 
  return (0);
+ }
 }
 }
