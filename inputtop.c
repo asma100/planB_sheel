@@ -24,5 +24,5 @@ ssize_t checkline;
     exit(EXIT_SUCCESS);
   }
 Parse(input,delim);
- /* return (input);*/
+ free(input);
 }
