@@ -5,17 +5,7 @@ char *tok;
 char **arr = NULL;
 int u, i, j, tok_counter = 0;
 char *input_cp = strdup(input);
-if (input_cp == NULL)
-{
-perror("Error allocating memory:");
-free(input);
-return;
-}
-if (input[0] == '\0')
-{
-free(input_cp);
-return ;
-}
+parsetok(input_cp, input)
 tok = strtok(input, delim);
 while (tok != NULL)
 {
