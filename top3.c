@@ -18,7 +18,7 @@ int main(void)
            inputtop(input, sizeof(input));
           
         free(input);
-    }
+    }}
     else
     {
         /* shell is running in non-interactive mode */
@@ -71,5 +71,5 @@ int main(void)
         }
     }
 
-    return 0;
+    return (0);
 }
