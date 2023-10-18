@@ -3,7 +3,7 @@
 {
 char *tok;
 char **arr = NULL;
-int u, i, j, tok_counter = 0;
+int u, i, tok_counter = 0;
 char *input_cp = strdup(input);
 if (input_cp == NULL)
 {
