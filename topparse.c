@@ -1,5 +1,5 @@
-#include "top.h"
-char **Parse(char * input, const char *delim)
+ #include "top.h"
+ void Parse(char * input, const char *delim)
 {
   /*  size_t s;
    ssize_t checkline;
@@ -18,13 +18,13 @@ char **Parse(char * input, const char *delim)
     if (input_cp == NULL) {
         perror("Error allocating memory:");
         free(input);
-        return NULL;
+        return;
     }
     
   /* Check for an empty input string */
   if (input[0] == '\0') {
     free(input_cp);
-    return NULL;
+    return ;
   }
     tok = strtok(input, delim);
     while (tok != NULL) {
@@ -38,7 +38,7 @@ char **Parse(char * input, const char *delim)
         perror("Error allocating memory for arr:");
         free(input);
         free(input_cp);
-        return NULL;
+        return ;
     }
 
     tok = strtok(input_cp, delim);
@@ -52,7 +52,7 @@ char **Parse(char * input, const char *delim)
             free(arr);
             free(input);
             free(input_cp);
-            return NULL;
+            return;
         }
         strcpy(arr[u], tok);
         tok = strtok(NULL, delim);
@@ -64,12 +64,12 @@ char **Parse(char * input, const char *delim)
  
    for (i = 0; i < u; i++) {
         free(arr[i]);
-    }
+    }  
    
+
+    free(arr);
+ 
+   free(input_cp);
 
 
  
-   free(input_cp);
-     return(arr);
-
-}
