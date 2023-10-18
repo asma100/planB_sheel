@@ -25,13 +25,13 @@ if (isatty (STDIN_FILENO)) {
 /* execute commands from script or batch file*/
 
 
- char *line = NULL;
 
 
 
-inputtop (input,sizeof(line));
 
-free(line);
+inputtop (input,sizeof(input));
+
+free(input);
 
 
  return (0);
