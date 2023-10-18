@@ -8,6 +8,9 @@
 #include <string.h>
 #include <sys/wait.h>
 #include <errno.h>
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <fcntl.h>
 void print_top(char *top);
 void topcmd(char **argv);
 void Parse(char *input, const char *delim);
