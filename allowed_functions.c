@@ -14,9 +14,11 @@ void print_error(const char *message) {
 
 }
 
-char **parsetok(char * input_cp, const char *delim)
+parsetok(char *input_cp, const char *delim)
 {
- char **arr = NULL;
+char *tok;
+char *input;
+char **arr = NULL;
 int u, j, tok_counter = 0;
 tok = strtok(input_cp, delim);
 for (u = 0; tok != NULL; u++)
@@ -36,5 +38,9 @@ return(NULL);
 tok = strtok(NULL, delim);
 }
 arr[u] = NULL;
- return (arr);
+topcmd(arr);
+for (i = 0; i < u; i++)
+free(arr[i]);
+free(arr);
+free(input_cp);
 }
