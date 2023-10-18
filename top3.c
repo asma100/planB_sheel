@@ -44,15 +44,13 @@ if (checkline == 1 && line[0] == '\n')
 free(line);
 continue;
 }
-  else if (strcmp(input, "exit\n") == 0) {
+  else if (strcmp(linet, "exit\n") == 0) {
     /* user wants to exit the program */
-    free(input);
-    input = NULL;
+    free(line);
+    line= NULL;
     exit(EXIT_SUCCESS);
   }
-Parse(input,delim);
- /* return (input);*/
-}
+
 else
 {
 Parse(line,delim);
