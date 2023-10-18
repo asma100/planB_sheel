@@ -1,31 +1,26 @@
  #include "top.h"
- void Parse(char * input, const char *delim)
+void Parse(char * input, const char *delim)
 {
-  /*  size_t s;
-   ssize_t checkline;
-   */
     char *tok;
     int tok_counter = 0;
     char **arr = NULL;
-    int u = 0; 
-   int j;
-  int i;
-    char *input_cp = strdup(input);
+    int u = 0;
+    int j;
+    int i;
+    char *input_cp;
 
- /*   checkline = getline(&input, &s, stdin);
- input_cp = malloc(sizeof(char) * (checkline + 1));
-    strcpy(input_cp, input);*/
+    /* Check for an empty input string */
+    if (input[0] == '\0') {
+        return ;
+    }
+
+    input_cp = strdup(input);
     if (input_cp == NULL) {
         perror("Error allocating memory:");
         free(input);
         return;
     }
-    
-  /* Check for an empty input string */
-  if (input[0] == '\0') {
 
-    return ;
-  }
     tok = strtok(input, delim);
     while (tok != NULL) {
         tok_counter++;
@@ -46,7 +41,7 @@
         arr[u] = malloc(sizeof(char) * (strlen(tok) + 2));
         if (arr[u] == NULL) {
             perror("Error allocating memory for arr[u]:");
-         for (j = 0; j < u; j++) {
+            for (j = 0; j < u; j++) {
                 free(arr[j]);
             }
             free(arr);
@@ -59,17 +54,12 @@
     }
     arr[u] = NULL;
 
-  
     topcmd(arr);
- 
-   for (i = 0; i < u; i++) {
+
+    for (i = 0; i < u; i++) {
         free(arr[i]);
-    }  
-   
+    }
 
     free(arr);
- 
-   free(input_cp);
-
-
+    free(input_cp);
 }
