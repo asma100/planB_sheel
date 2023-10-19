@@ -1,7 +1,7 @@
 
 char **comment(char **arr)
 {
-while(arr[i] != "#" )
+while(arr[i] != "#"||arr[i] != NULL )
 {
 arrc[i]=arr[i];
 free(arr[i]);
