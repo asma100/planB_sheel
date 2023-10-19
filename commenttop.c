@@ -11,7 +11,7 @@ char **comment(char **arr)
       if(arr[i][j] == '#')
       {
         arrc[i] = NULL;
-        goto next; 
+        break ; 
       }
       j++;
     }
