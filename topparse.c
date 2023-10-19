@@ -1,9 +1,7 @@
  #include "top.h"
  void Parse(char * input, const char *delim)
 {
-  /*  size_t s;
-   ssize_t checkline;
-   */
+ 
     char *tok;
     int tok_counter = 0;
     char **arr = NULL;
@@ -12,9 +10,7 @@
   int i;
     char *input_cp = strdup(input);
 
- /*   checkline = getline(&input, &s, stdin);
- input_cp = malloc(sizeof(char) * (checkline + 1));
-    strcpy(input_cp, input);*/
+void empchack(char * input, char * input_cp){
     if (input_cp == NULL) {
         perror("Error allocating memory:");
         free(input);
@@ -26,6 +22,7 @@
     free(input_cp);
     return ;
   }
+}
     tok = strtok(input, delim);
     while (tok != NULL) {
         tok_counter++;
