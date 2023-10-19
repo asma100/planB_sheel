@@ -2,6 +2,7 @@
 char **comment(char **arr)
 {
 int i = 0;
+char **arrc = NULL;
 while(arr[i] != "#"||arr[i] != NULL )
 {
 arrc[i]=arr[i];
