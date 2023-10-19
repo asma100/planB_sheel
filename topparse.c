@@ -42,7 +42,7 @@ tok = strtok(NULL, delim);
 }
 arr[u] = NULL;
 topcmd(arr);
-void freep(arr,input_cp);
+freep(arr,input_cp);
 }
 void freep(char **arr,char *input_cp) 
 {
