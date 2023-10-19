@@ -1,73 +1,85 @@
 #include "top.h"
 /**
- * empty - function for the user input handling
- * @input: size of the input
- * Return: int
+ * Parse - function for the parsing
+ * @input: input from the cmd
+ * @delim: value of the delimeter
+ * Return: the coun number
 */
-int empty(char *input)
+void Parse(char *input, const char *delim)
 {
-if (input == NULL)
-return (1);
-while (*input)
+char *tok;
+int tok_counter = 0;
+char **arr = NULL;
+int  u = 0;
+char *input_cp = strdup(input);
+empchack(input, input_cp);
+tok = strtok(input, delim);
+while (tok != NULL)
 {
-if (!isspace(*input))
-return (0);
-input++;
+tok_counter++;
+tok = strtok(NULL, delim);
 }
-return (1);
+tok_counter++;
+arr = malloc(sizeof(char *) * tok_counter);
+if (arr == NULL)
+{
+perror("Error allocating memory for arr:");
+free(input);
+free(input_cp);
+return;
+}
+tok = strtok(input_cp, delim);
+for (u = 0; tok != NULL; u++)
+{
+arr[u] = malloc(sizeof(char) * (strlen(tok) + 2));
+if (arr[u] == NULL)
+{
+perror("Error allocating memory for arr[u]:");
+freep(arr, input_cp, u);
+free(input);
+return;
+}
+strcpy(arr[u], tok);
+tok = strtok(NULL, delim);
+}
+arr[u] = NULL;
+topcmd(arr);
+freep(arr, input_cp, u);
+}
+
+/**
+ * freep - free
+ *@arr: array
+ *@input_cp: input
+ *@u: counter
+ * Return: void
+*/
+void freep(char **arr, char *input_cp, int u)
+{
+int i;
+for (i = 0; i < u; i++)
+free(arr[i]);
+free(arr);
+free(input_cp);
 }
 /**
- * inputtop - function for the user input handling
- * @s: size of the input
- * @input: value
- * @status:0,1
- * Return: null
+ * empchack - function for the environ
+ *@input: input
+ *@input_cp: copy of input
+ *
+ * Return: void
 */
-void inputtop(char *input, size_t s, int status)
+void empchack(char *input, char *input_cp)
 {
-ssize_t checkline;
-const char *delim = " \t\n";
-char exitstatus[] = "/bin/ls: cannot access '/test_hbtn': No such file or directory\n";
-checkline = getline(&input, &s, stdin);
-if (checkline == -1) {
-if (feof(stdin))
+if (input_cp == NULL)
 {
+perror("Error allocating memory:");
 free(input);
-exit(EXIT_SUCCESS);
+return;
 }
-else
+if (input[0] == '\0')
 {
-perror("Error reading input:");
-free(input);
-exit(EXIT_FAILURE);
+free(input_cp);
+return;
 }
-}
-else if (strcmp(input, "exit\n") == 0)
-{
-free(input);
-input = NULL;
-if (status == 0)
-exit(0);
-else
-{
-write(STDERR_FILENO, exitstatus, strlen(exitstatus));
-exit (2);
-}
-}
-else if (strcmp(input, "env\n") == 0)
-{
-env_builtin();
-free(input);
-exit (0);
-}
-else
-{
-if (empty(input) == 1)
-{
-free(input);
-exit(0);
-}
-Parse(input, delim);
-}
-free(input);
 }
