@@ -1,14 +1,6 @@
  #include "top.h"
- void Parse(char * input, const char *delim)
-{
- 
-    char *tok;
-    int tok_counter = 0;
-    char **arr = NULL;
-    int u = 0; 
-   int j;
-  int i;
-    char *input_cp = strdup(input);
+
+
 
 void empchack(char * input, char * input_cp){
     if (input_cp == NULL) {
@@ -23,6 +15,18 @@ void empchack(char * input, char * input_cp){
     return ;
   }
 }
+ void Parse(char * input, const char *delim)
+{
+ 
+    char *tok;
+    int tok_counter = 0;
+    char **arr = NULL;
+    int u = 0; 
+   int j;
+  int i;
+    char *input_cp = strdup(input);
+empchack(input, input_cp);
+
     tok = strtok(input, delim);
     while (tok != NULL) {
         tok_counter++;
