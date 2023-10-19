@@ -11,6 +11,7 @@
 #include <sys/types.h>
 #include <sys/stat.h>
 #include <fcntl.h>
+void empchack(char * input, char * input_cp);
 void print_top(char *top);
 void topcmd(char **argv);
 void Parse(char *input, const char *delim);
