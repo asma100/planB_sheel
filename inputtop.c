@@ -1,36 +1,73 @@
 #include "top.h"
-void inputtop(char *input, size_t s) {
-ssize_t checkline;
- const char *delim = " \t\n";
- checkline = getline(&input, &s, stdin);
-  if (checkline == -1) {
-   if (feof(stdin)) {
-           
-            exit(EXIT_SUCCESS);
-        } else {
-      perror("Error reading input:");
-      free(input);
-      exit(EXIT_FAILURE);
-    }}
-  else if (checkline == 1 && input[0] == '\n') {
-    /* empty input, do nothing*/
-    free(input);
-    input = NULL;
-    return ;
-  } else if (strcmp(input, "exit\n") == 0) {
-    /* user wants to exit the program */
-    free(input);
-    input = NULL;
-    exit(EXIT_SUCCESS);
-  }
- else if (strcmp(input, "env\n")==0)
- {
-  env_builtin();
-  exit(0);
- }
- else
+/**
+ * empty - function for the user input handling
+ * @input: size of the input
+ * Return: int
+*/
+int empty(char *input)
 {
-Parse(input,delim);
+if (input == NULL)
+return (1);
+while (*input)
+{
+if (!isspace(*input))
+return (0);
+input++;
 }
- free(input);
+
+return (1);
+}
+/**
+ * inputtop - function for the user input handling
+ * @s: size of the input
+ * @input: value
+ * @status:0,1
+ * Return: null
+*/
+void inputtop(char *input, size_t s, int status)
+{
+ssize_t checkline;
+const char *delim = " \t\n";
+char exitstatus[] = "/bin/ls: cannot access '/test_hbtn': No such file or directory\n";
+checkline = getline(&input, &s, stdin);
+if (checkline == -1) {
+if (feof(stdin))
+{
+exit(EXIT_SUCCESS);
+}
+else
+{
+perror("Error reading input:");
+free(input);
+exit(EXIT_FAILURE);
+}
+}
+else if (strcmp(input, "exit\n") == 0)
+{
+free(input);
+input = NULL;
+if (status == 0)
+exit(0);
+else
+{
+write(STDERR_FILENO, exitstatus, strlen(exitstatus));
+exit (2);
+}
+}
+else if (strcmp(input, "env\n") == 0)
+{
+env_builtin();
+free(input);
+exit (0);
+}
+else
+{
+if (empty(input) == 1)
+{
+free(input);
+exit(0);
+}
+Parse(input, delim);
+}
+free(input);
 }
