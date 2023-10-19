@@ -7,6 +7,7 @@
 */
 void Parse(char *input, const char *delim)
 {
+char **arrc;
 char *tok;
 int tok_counter = 0;
 char **arr = NULL;
