@@ -29,12 +29,7 @@ void inputtop(char *input, size_t s, int status) {
 	else if (strcmp(input, "exit\n") == 0)
 	{
 		free(input);
-		if (status == 0)
-			exit(0);
-		else
-		{
-			write(STDERR_FILENO, exitstatus, strlen(exitstatus));
-			exit (2);
+	
 		}
 	}
 	else if (strcmp(input, "env\n") == 0)
