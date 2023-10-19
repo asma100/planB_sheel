@@ -61,12 +61,7 @@ env_builtin();
 free(input);
 exit (0);
 }
-else if (checkline == 1 && input[0] == '\n') {
-    /* empty input, do nothing*/
-    free(input);
-    input = NULL;
-    return ;
-  }
+
 else
 {
 if (empty(input) == 1)
