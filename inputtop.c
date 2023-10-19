@@ -67,7 +67,13 @@ Parse(input, delim);
 free(input);
 }
 
-
+/**
+ * free_exit - function for exiting
+ * 
+ * @input: value
+ * 
+ * Return: void
+*/
 void free_exit(char *input)
 {
 free(input);
