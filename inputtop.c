@@ -68,7 +68,7 @@ free(input);
 }
 
 
-voide free_exit(char *input)
+void free_exit(char *input)
 {
 free(input);
 exit (0);   
