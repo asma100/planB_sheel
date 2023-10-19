@@ -30,11 +30,9 @@ arr[u] = malloc(sizeof(char) * (strlen(tok) + 2));
 if (arr[u] == NULL) 
 {
 perror("Error allocating memory for arr[u]:");
-for (j = 0; j < u; j++) 
-free(arr[j]);
-free(arr);
+freep(arr,input_cp,u);
 free(input);
-free(input_cp);
+
 return;
 }
 strcpy(arr[u], tok);
