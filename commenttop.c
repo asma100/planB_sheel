@@ -1,8 +1,8 @@
-#include "top.h"
 char **comment(char **arr)
 {
   int i = 0;
-  char **arrc = malloc(sizeof(char*) * (MAX_ARGS + 1)); 
+  char **arrc = malloc(sizeof(char*) * (MAX_ARGS + 1));
+
   while(arr[i] != NULL)
   {
     int j = 0;
@@ -11,15 +11,15 @@ char **comment(char **arr)
       if(arr[i][j] == '#')
       {
         arrc[i] = NULL;
-        break ; 
+        break; 
       }
       j++;
     }
     arrc[i] = arr[i];
     i++;
-  next:
-    ;
   }
-  arrc[i] = NULL; 
-  return arrc; 
+
+  arrc[i] = NULL;
+
+  return arrc;
 }
