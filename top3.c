@@ -3,38 +3,25 @@
 #include <unistd.h>
 #include "top.h"
 
+/**
+ * main-function for the shell
+ * Return: the coun number
+*/
 
 
-int main(void) {
- char *input = NULL;
-/*char *input_cp = NULL;*/
-
-if (isatty (STDIN_FILENO)) {
-/* shell is running in interactive mode */
-/* display prompt and accept input from user */
- while (1) {
- print_top("top$");
- inputtop (input,sizeof(input));
-
-
-
- }
- free(input);
-/* free(input_cp);*/
-} else {
-/* shell is running in non-interactive mode */
-/* execute commands from script or batch file*/
-
-
-
+int main(void)
+{
+char *input = NULL;
+int status = 0;
 while (1)
- {
-inputtop (input,sizeof(input));
+{
+if (isatty(STDIN_FILENO))
+print_top("top$");
+inputtop(input, sizeof(input), status);
+status++;
 }
+free(input);
 
- free(input);
-}
-
- return (0);
+return (0);
 
 }
