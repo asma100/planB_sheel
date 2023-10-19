@@ -5,7 +5,7 @@ void Parse(char * input, const char *delim)
 char *tok;
 int tok_counter = 0;
 char **arr = NULL;
-int j, u = 0; 
+int  u = 0; 
 char *input_cp = strdup(input);
 empchack(input, input_cp);
 tok = strtok(input, delim);
