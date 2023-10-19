@@ -11,7 +11,7 @@
 #include <sys/types.h>
 #include <sys/stat.h>
 #include <fcntl.h>
-void freep(char **arr,char *input_cp);
+void freep(char **arr,char *input_cp, int u);
 void empchack(char * input, char * input_cp);
 void print_top(char *top);
 void topcmd(char **argv);
