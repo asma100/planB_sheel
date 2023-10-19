@@ -32,8 +32,7 @@ checkline = getline(&input, &s, stdin);
 if (checkline == -1) {
 if (feof(stdin))
 {
-free(input);
-exit(EXIT_SUCCESS);
+free_exit(char *input);
 }
 else
 {
@@ -57,17 +56,20 @@ exit (2);
 else if (strcmp(input, "env\n") == 0)
 {
 env_builtin();
-free(input);
-exit (0);
+free_exit(char *input);
 }
 else
 {
 if (empty(input) == 1)
-{
-free(input);
-exit(0);
-}
+free_exit(char *input);
 Parse(input, delim);
 }
 free(input);
+}
+
+
+voide free_exit(char *input)
+{
+free(input);
+exit (0);   
 }
