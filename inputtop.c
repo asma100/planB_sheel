@@ -18,7 +18,7 @@ int empty(char *input)
 
 void inputtop(char *input, size_t s, int status) {
 	ssize_t checkline;
-	
+	 const char *delim = " \t\n";
 
 	checkline = getline(&input, &s, stdin);
 	if (checkline == -1)
