@@ -14,7 +14,6 @@ if (!isspace(*input))
 return (0);
 input++;
 }
-
 return (1);
 }
 /**
@@ -61,7 +60,6 @@ env_builtin();
 free(input);
 exit (0);
 }
-
 else
 {
 if (empty(input) == 1)
@@ -72,4 +70,3 @@ exit(0);
 Parse(input, delim);
 }
 free(input);
-}
