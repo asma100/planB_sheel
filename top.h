@@ -11,6 +11,7 @@
 #include <sys/types.h>
 #include <sys/stat.h>
 #include <fcntl.h>
+void freep(char **arr,char *input_cp);
 void empchack(char * input, char * input_cp);
 void print_top(char *top);
 void topcmd(char **argv);
@@ -22,6 +23,6 @@ void print_error(const char *message);
 size_t _strlen(const char *s);
 void parsetok(char *input_cp, char *input);
 /*void read_command(char *command, size_t size);
-  void execute_command(const char *command);*/
+void execute_command(const char *command);*/
 
 #endif
