@@ -32,7 +32,7 @@ checkline = getline(&input, &s, stdin);
 if (checkline == -1) {
 if (feof(stdin))
 {
-free_exit(char *input);
+free_exit(input);
 }
 else
 {
@@ -56,12 +56,12 @@ exit (2);
 else if (strcmp(input, "env\n") == 0)
 {
 env_builtin();
-free_exit(char *input);
+free_exit(input);
 }
 else
 {
 if (empty(input) == 1)
-free_exit(char *input);
+free_exit(input);
 Parse(input, delim);
 }
 free(input);
