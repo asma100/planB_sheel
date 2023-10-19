@@ -13,7 +13,7 @@
 #include <ctype.h>
 #include <fcntl.h>
 
-
+void free_exit(char *input);
 void empchack(char * input, char * input_cp);
 void freep(char **arr,char *input_cp,int u);
 extern char **environ;
