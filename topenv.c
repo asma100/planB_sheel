@@ -1,7 +1,11 @@
 #include "top.h"
-void env_builtin()
+/**
+ * env_builtin - function for the environ
+ *
+ * Return: void
+*/
+void env_builtin(void)
 {
-extern char **environ;
 char **env;
 for (env = environ; *env != NULL; env++)
 {
