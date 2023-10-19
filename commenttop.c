@@ -1,14 +1,13 @@
 #include "top.h"
 char **comment(char **arr)
 {
-int i = 0;
-char **arrc = NULL;
-while(strcmp(arr[i], "#") != 0  || arr[i] != NULL )
-{
-arrc[i]=arr[i];
-free(arr[i]);
-i++;
-}
-free(arr);
-return(arrc); 
+    int i = 0;
+    char **arrc = malloc(sizeof(char*) * (MAX_ARGS + 1)); 
+    while(arr[i] != NULL && strcmp(arr[i], "#") != 0)
+    {
+        arrc[i] = arr[i];
+        i++;
+    }
+    arrc[i] = NULL; 
+    return arrc; 
 }
