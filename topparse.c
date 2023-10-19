@@ -42,14 +42,15 @@ tok = strtok(NULL, delim);
 }
 arr[u] = NULL;
 topcmd(arr);
-freep(arr,input_cp);
+freep(arr,input_cp,u);
 }
-void freep(char **arr,char *input_cp) 
+void freep(char **arr,char *input_cp,int u) 
 {
+ int i; 
     for (i = 0; i < u; i++) 
 free(arr[i]);
 free(arr);
-free(input_cp)
+free(input_cp);
 }
 
 void empchack(char * input, char * input_cp)
