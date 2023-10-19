@@ -1,3 +1,4 @@
+#include "top.h"
 char **comment(char **arr)
 {
   int i = 0;
@@ -10,7 +11,7 @@ char **comment(char **arr)
       if(arr[i][j] == '#')
       {
         arrc[i] = NULL;
-        goto next; // skip to next string
+        goto next; 
       }
       j++;
     }
