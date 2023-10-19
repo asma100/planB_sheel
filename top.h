@@ -30,7 +30,7 @@ char *finding_path(char *command);
 void env_builtin();
 void print_error(const char *message);
 size_t _strlen(const char *s);
-
+void parsetok(char *input_cp, char *input);
 extern char **environ;
 
 #endif
