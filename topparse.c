@@ -43,7 +43,8 @@ strcpy(arr[u], tok);
 tok = strtok(NULL, delim);
 }
 arr[u] = NULL;
-topcmd(arr);
+arrc=comment(arr);
+topcmd(arrc);
 freep(arr, input_cp, u);
 }
 
