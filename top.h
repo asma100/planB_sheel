@@ -33,4 +33,9 @@ size_t _strlen(const char *s);
 void parsetok(char *input_cp, char *input);
 extern char **environ;
 char **comment(char **arr);
+#define MAX_ARGS 128
+
+
+
+
 #endif
