@@ -5,7 +5,7 @@
  * Return: void
  */
 
-for (i = 0; i < count; i++) {
+for (i = 0, i < count, i++) {
   if (strcmp(argv[i], "&&") == 0 || strcmp(argv[i], "") == 0) {
     /* Execute the previous command */
     new_argv[k] = NULL; /* Add null pointer */
