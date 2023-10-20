@@ -1,11 +1,11 @@
 #include "top.h"
 char **comment(char **arr)
 {
-    int i = 0;
+    int i = 0, j = 0;
     char **arrc = malloc(sizeof(char*) * (MAX_ARGS + 1)); 
     while(arr[i] != NULL)
     {
-        int j = 0;
+        j = 0;
         while(arr[i][j] != '\0')
         {
             if(arr[i][j] == '#')
@@ -15,7 +15,7 @@ char **comment(char **arr)
             }
             j++;
         }
-        arrc[i] = arr[i];
+        arrc[i] = strdup(arr[i]);
         i++;
     next:
         i++; 
