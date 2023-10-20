@@ -26,7 +26,6 @@ return (1);
 void inputtop(char *input, size_t s, int status)
 {
 const char *delim = " \t\n";
-int i = 0;
 ssize_t checkline = getline(&input, &s, stdin);
 if (checkline == -1)
 {
