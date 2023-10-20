@@ -25,7 +25,7 @@ char **comment(char **arr,int tok_counter)
     while (m<i)
        {
            ar[m] = strdup(arr[m]); 
-       m++
+       m++;
        }
     
     free(arr);
