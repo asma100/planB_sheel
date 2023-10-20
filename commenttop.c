@@ -2,7 +2,8 @@
 char **comment(char **arr, tok_counter)
 {
     int i = 0, j = 0;
-    char **arrc = malloc(sizeof(char*) * tok_counter); 
+    char **arrc = malloc(sizeof(char*) * tok_counter);
+    
     while(arr[i] != NULL)
     {
         j = 0;
