@@ -32,7 +32,7 @@ void print_error(const char *message);
 int _strlen(char *s);
 void parsetok(char *input_cp, char *input);
 extern char **environ;
-char **comment(char **arr, tok_counter);
+char **comment(char **arr,int tok_counter);
 #define MAX_ARGS 128
 
 
