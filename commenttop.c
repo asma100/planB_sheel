@@ -18,7 +18,7 @@ char **comment(char **arr)
         arrc[i] = arr[i];
         i++;
     next:
-        ;
+        i++; 
     }
     arrc[i] = NULL; 
     return arrc; 
