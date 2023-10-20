@@ -1,5 +1,5 @@
 #include "top.h"
-size_t _strlen(const char *s) {
+int _strlen(char *s) {
  int cou = 0;
  while (*s != '\0') {
  s++;
