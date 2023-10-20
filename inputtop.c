@@ -48,10 +48,13 @@ exit(0);
 }
 else
 {
-  
-       
+ if (input[strlen(input) - 1] == '\n') {
+            input[strlen(input) - 1] = '\0';
+        }
 
-comm(input);
+     
+        handle_semicolon(input);
+       
 if (empty(input) == 1)
 {
 free(input);
