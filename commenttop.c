@@ -6,20 +6,19 @@ char **comment(char **arr, int tok_counter)
   while(arr[i] != NULL )
   {
     int j = 0;
-    while(arr[i][j] != '\0')
+    while(arr[i][j] != '\0'|| arr[i][j] != '#')
     {
-      if(arr[i][j] == '#')
-      {
-        a = 1;
-        break;
-      }
-      j++;
-    }
-    if(arr[i][j] != '#' && arr[i] != NULL) 
+       if(arr[i][j] != '#' && arr[i] != NULL) 
     {
       ar[count] = strdup(arr[i]);
       count++;
     }
+      
+        a = 1;
+        
+      j++;
+    }
+ 
     if (a == 1)
     {
       break;
