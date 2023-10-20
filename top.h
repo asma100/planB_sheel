@@ -15,7 +15,7 @@
 
 void free_exit(char *input);
 void empchack(char * input, char * input_cp);
-void freep(char **arr,char *input_cp);
+void freep(char **arrc,char *input_cp);
 extern char **environ;
 void handext(char *input,int status);
 void handenv(char *input);
