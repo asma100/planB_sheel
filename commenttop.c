@@ -1,5 +1,5 @@
 #include "top.h"
-char **comment(char **arr, int tok_counter)
+/*char **comment(char **arr, int tok_counter)
 {
   int i = 0, count = 0, a = 0; 
   char **ar = malloc(sizeof(char*) * (tok_counter + 1));
@@ -21,18 +21,43 @@ char **comment(char **arr, int tok_counter)
       count++;
     }
     if (a == 1)
-
     {
       break;
     }
     i++;
   }
   ar[count] = NULL;
-
-  for (i = 0; arr[i] != NULL; i++)
+for (i = 0; arr[i] != NULL; i++)
     free(arr[i]);
+free(arr);
+return ar;
+}*/
 
-  free(arr);
+char **comment(char **argv, int argc) {
+  int i, j, k;
+  char **new_argv;
 
-  return ar;
+
+  for (i = 0; argv[i] != NULL; i++) {
+    ;
+  }
+
+
+  new_argv = malloc(sizeof(char *) * (i + 1));
+
+ 
+  k = 0;
+  for (i = 0; i < argc; i++) {
+    for (j = 0; argv[i][j] != '\0' && argv[i][j] != '#'; j++) {
+      ;
+    }
+    if (argv[i][j] == '\0') {
+      new_argv[k++] = strdup(argv[i]);
+    }
+  }
+
+ 
+  new_argv[k] = NULL;
+
+  return new_argv;
 }
