@@ -21,6 +21,11 @@ char **comment(char **arr,int tok_counter)
     next:
         i++; 
     }
-    arrc[i] = NULL; 
+    while( i < tok_counter) {
+  arrc[i] = NULL;
+        i++
+}
+    
+   
     return arrc; 
 }
