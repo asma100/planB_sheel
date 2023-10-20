@@ -46,8 +46,6 @@ arr[u] = NULL;
 topcmd(arr);
 freep(arr, input_cp, u);
 }
-
-  
 /**
  * freep - free
  *@arr: array
