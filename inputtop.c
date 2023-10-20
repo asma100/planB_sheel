@@ -66,7 +66,13 @@ Parse(input, delim);
 }
 free(input);
 }
-
+/**
+ * newline - function fornewline
+ * 
+ * @input: value
+ *
+ * Return: void
+*/
 void newline(char *input)
 {
 free(input);
