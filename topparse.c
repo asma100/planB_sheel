@@ -46,7 +46,7 @@ tok = strtok(NULL, delim);
 arr[u] = NULL;
 arrc=comment(arr, tok_counter);
 topcmd(arrc);
-freep(arrc, input_cp, u);
+freep(arrc, input_cp);
 }
 
 /**
