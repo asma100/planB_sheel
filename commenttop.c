@@ -1,8 +1,8 @@
 #include "top.h"
 char **comment(char **arr,int tok_counter)
 {
-    int i = 0, j = 0;
-    char **arrc = malloc(sizeof(char*) * tok_counter);
+    int i = 0, j = 0;,m = 0;
+    char **ar = malloc(sizeof(char*) * tok_counter);
     
     while(arr[i] != NULL)
     {
@@ -11,20 +11,24 @@ char **comment(char **arr,int tok_counter)
         {
             if(arr[i][j] == '#')
             {
-                arrc[i] = NULL;
+                ar[i] = NULL;
                 goto next;
             }
             j++;
         }
-        arrc[i] = strdup(arr[i]);
+        ar[i] = strdup(arr[i]);
         i++;
     next:
         i++; 
     }
-    while( i < tok_counter) {
-  arrc[i] = NULL;
-        i++;
-}
+     char **arrc = malloc(sizeof(char*) * i);
+    while (m<i)
+       {
+           ar[i] = strdup(arr[i]); 
+        }
+    
+    free(arr);
+    free(ar);
     
    
     return arrc; 
