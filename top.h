@@ -13,7 +13,7 @@
 #include <ctype.h>
 #include <fcntl.h>
 
-void handle_logicalop(char **argv);
+void  handle_logicalop(char **argv, int tok_counter)
 char *comm(char *input);
 void free_exit(char *input);
 void empchack(char *input, char  *input_cp);
