@@ -59,7 +59,7 @@ freep(arrc, input_cp);
 void freep(char **arrc, char *input_cp)
 {
 int i;
-for (i = 0; i != NULL; i++)
+for (i = 0; arrc[i] != NULL; i++)
 free(arrc[i]);
 free(arrc);
 free(input_cp);
