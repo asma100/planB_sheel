@@ -17,7 +17,7 @@ if (isatty(STDIN_FILENO))
 print_top("top$");
 inputtop(input, sizeof(input), status);
 status++;
-handle_semicolon(input);
+
 }
 free(input);
 
