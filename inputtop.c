@@ -51,8 +51,7 @@ else
 {
 if (empty(input) == 1)
 {
-free(input);
-return;
+newline(input);
 }
 while (input[i] != '\0')
 {
@@ -66,4 +65,10 @@ i++;
 Parse(input, delim);
 }
 free(input);
+}
+
+void newline(char *input)
+{
+free(input);
+return;
 }
