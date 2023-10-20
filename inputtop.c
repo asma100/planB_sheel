@@ -1,7 +1,7 @@
 #include "top.h"
-/**                                                                 
- * empty - function for the user input handlin 
- * @input: size of the input                                                                         
+/**
+ * empty - function for the user input handlin
+ * @input: size of the input
  * Return: int                                                                    
 */
 int empty(char *input)
@@ -17,21 +17,24 @@ input++;
 return (1);
 }
 /**                                                                   
- * inputtop - function for the user input handling                                                   
- * @s: size of the input                                                                             
- * @input: value                                                                                     
- * @status:0,1                                                                     
- * Return: null                                                                                      
+ * inputtop - function for the user input handling
+ * @s: size of the input
+ * @input: value
+ * @status:0,1
+ * Return: null 
 */
-void inputtop(char *input, size_t s, int status) {
-ssize_t checkline;
+void inputtop(char *input, size_t s, int status)
+{
 const char *delim = " \t\n";
 int i = 0;
-checkline = getline(&input, &s, stdin);
-if (checkline == -1) {
+ssize_t checkline = getline(&input, &s, stdin);
+if (checkline == -1)
+{
 free(input);
 exit(EXIT_SUCCESS);
-} else if (strcmp(input, "exit\n") == 0) {
+}
+else if (strcmp(input, "exit\n") == 0)
+{
 free(input);
 if (status == 0)
 exit(0);
@@ -51,8 +54,10 @@ if (empty(input) == 1)
 free(input);
 return;
 }
-while (input[i] != '\0') {
-if (input[i] == '#') {
+while (input[i] != '\0')
+{
+if (input[i] == '#')
+{
 input[i] = '\0';
 break;
 }
