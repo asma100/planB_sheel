@@ -24,7 +24,7 @@ char **comment(char **arr,int tok_counter)
      arrc = malloc(sizeof(char*) * i);
     while (m<i)
        {
-           ar[i] = strdup(arr[i]); 
+           ar[m] = strdup(arr[m]); 
         }
     
     free(arr);
