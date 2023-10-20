@@ -1,3 +1,4 @@
+#include "top.h"
 char **comment(char **arr, int tok_counter)
 {
     int i = 0, count = 0;
@@ -13,7 +14,7 @@ char **comment(char **arr, int tok_counter)
             }
             j++;
         }
-        if(arr[i][j] != '#') // Only add if '#' was not found
+        if(arr[i][j] != '#') 
         {
             ar[count] = strdup(arr[i]);
             count++;
