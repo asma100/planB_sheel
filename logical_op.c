@@ -20,28 +20,26 @@ void handle_logicalop(char **argv) {
   new_argv = malloc(sizeof(char *) * (count + 1));
 
   /*Copy new argument vector, skipping any logical operators.*/
-for (i = 0; i < count; i++) {
-  if (strcmp(argv[i], "&&") == 0 || strcmp(argv[i], "||") == 0) {
-    /* Execute the previous command */
-    new_argv[k] = NULL; /* Add null pointer */
-    if (execve(new_argv[0], new_argv, NULL) == -1) {
-      perror("execve");
-      return;
+  for (i = 0; i < count; i++) {
+    if (strcmp(argv[i], "&&") == 0 || strcmp(argv[i], "||") == 0) {
+      continue;
     }
-    /* Reset the argument vector for the next command */
-    k = 0;
-    continue;
+
+    new_argv[k++] = strdup(argv[i]);
   }
 
-  new_argv[k++] = strdup(argv[i]);
-}
+  /* Add null pointer to end of last argument vector */
+  new_argv[k] = NULL;
 
-/* Add null pointer to end of last argument vector */
-new_argv[k] = NULL;
+  /* Execute the last command */
+  if (execve(new_argv[0], new_argv, NULL) == -1) {
+    perror("execve");
+    return;
+  }
 
-/* Execute the last command */
-if (execve(new_argv[0], new_argv, NULL) == -1) {
-  perror("execve");
-  return;
-}
+  /* Free the memory allocated for the new argument vector.*/
+  for (i = 0; i < k; i++) {
+    free(new_argv[i]);
+  }
+  free(new_argv);
 }
