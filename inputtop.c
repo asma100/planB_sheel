@@ -55,15 +55,6 @@ if (empty(input) == 1)
 free(input);
 return;
 }
-while (input[i] != '\0')
-{
-if (input[i] == '#')
-{
-input[i] = '\0';
-break;
-}
-i++;
-}
 Parse(input, delim);
 }
 free(input);
