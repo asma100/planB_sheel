@@ -63,8 +63,8 @@ break;
 }
 i++;
 }
-comm(input);
-Parse(input, delim);
+iput=comm(input);
+Parse(iput, delim);
 }
 free(input);
 }
