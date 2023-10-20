@@ -1,7 +1,7 @@
 #include "top.h"
 /**
  * handle_logicalop - function  handlel ogical op
- * @*argv: pointer to the command value
+ * @argv: pointer to the command value
  * Return: void
  */
 void handle_logicalop(char **argv)
