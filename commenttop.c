@@ -1,26 +1,25 @@
 #include "top.h"
 char **comment(char **arr)
 {
-  int i = 0;
-  char **arrc = malloc(sizeof(char*) * (MAX_ARGS + 1));
-
-  while(arr[i] != NULL)
-  {
-    int j = 0;
-    while(arr[i][j] != '\0')
+    int i = 0;
+    char **arrc = malloc(sizeof(char*) * (MAX_ARGS + 1)); 
+    while(arr[i] != NULL)
     {
-      if(arr[i][j] == '#')
-      {
-        arrc[i] = NULL;
-        break; 
-      }
-      j++;
+        int j = 0;
+        while(arr[i][j] != '\0')
+        {
+            if(arr[i][j] == '#')
+            {
+                arrc[i] = NULL;
+                goto next; // skip to next string
+            }
+            j++;
+        }
+        arrc[i] = arr[i];
+        i++;
+    next:
+        ;
     }
-    arrc[i] = arr[i];
-    i++;
-  }
-
-  arrc[i] = NULL;
-
-  return arrc;
+    arrc[i] = NULL; 
+    return arrc; 
 }
