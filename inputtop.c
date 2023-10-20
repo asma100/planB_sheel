@@ -77,6 +77,7 @@ free(input);
 */
 char *comm(char *input)
 {
+int i = 0;
 while (input[i] != '\0')
 {
 if (input[i] == '#')
@@ -86,5 +87,5 @@ break;
 }
 i++;
 }
-return(input)
+return(input);
 }
