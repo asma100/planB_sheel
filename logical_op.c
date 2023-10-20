@@ -1,5 +1,5 @@
 #include "top.h"
-void handle_logicalop(char **argv,int tok_counter) {
+void handle_logicalop(char **argv, int tok_counter) {
   int i = 0;
   int j = 0;
   int k = 0;
@@ -14,7 +14,7 @@ void handle_logicalop(char **argv,int tok_counter) {
   new_argv = malloc(sizeof(char *) * (i + 1));
 
   /*Copy the arguments into the new argument vector, skipping any logical operators.*/
-  for (i = 0; i < argc; i++) {
+  for (i = 0; i < tok_counter; i++) {
     if (strcmp(argv[i], "&&") == 0 || strcmp(argv[i], "||") == 0) {
       continue;
     }
