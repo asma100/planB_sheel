@@ -58,11 +58,11 @@ void Parse(char *input, const char *delim)
 */
 void freep(char **arrc, char *input_cp)
 {
-int i;
-for (i = 0; arrc[i] != NULL; i++)
-free(arrc[i]);
-free(arrc);
-free(input_cp);
+    int i;
+    for (i = 0; arrc[i] != NULL; i++)
+        free(arrc[i]);
+    free(arrc);
+    free(input_cp);
 }
 /**
  * empchack - function for the environ
@@ -73,15 +73,15 @@ free(input_cp);
 */
 void empchack(char *input, char *input_cp)
 {
-if (input_cp == NULL)
-{
-perror("Error allocating memory:");
-free(input);
-return;
-}
-if (input[0] == '\0')
-{
-free(input_cp);
-return;
-}
+    if (input_cp == NULL)
+    {
+        perror("Error allocating memory:");
+        free(input);
+        return;
+    }
+    if (input[0] == '\0')
+    {
+        free(input_cp);
+        return;
+    }
 }
