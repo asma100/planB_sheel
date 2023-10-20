@@ -1,5 +1,5 @@
 
-#include <stdio.h>
+/*#include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
 #include "top.h"
@@ -170,7 +170,7 @@ if (isatty (STDIN_FILENO)) {
 
  /* free memory*/
  free(line);
-}
+}*/
 
 
  return (0);
