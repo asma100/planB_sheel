@@ -29,7 +29,7 @@ void Parse(char *input, const char *delim);
 char *finding_path(char *command);
 void env_builtin();
 void print_error(const char *message);
-int _strlen(const char *s);
+int _strlen(char *s);
 void parsetok(char *input_cp, char *input);
 extern char **environ;
 char **comment(char **arr);
