@@ -9,6 +9,7 @@ void handle_logicalop(char **argv) {
   
   int k = 0;
   int count = 0;
+  int status = 0;
   char **new_argv;
 
   /*Count the number of arguments.*/
@@ -28,11 +29,10 @@ void handle_logicalop(char **argv) {
         perror("execve");
         return;
       }
-
-      /* Create a new argument vector for the next command */
-      new_argv = malloc(sizeof(char *) * (count + 1));
+      /* Reset the argument vector for the next command */
       k = 0;
-
+      /* Reset the status variable */
+      status = 0;
       continue;
     }
 
