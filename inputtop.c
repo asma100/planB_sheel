@@ -28,7 +28,7 @@ int empty(char *input)
 void inputtop(char *input, size_t s, int status) {
   ssize_t checkline;
   const char *delim = " \t\n";
-
+int i = 0;
   checkline = getline(&input, &s, stdin);
   if (checkline == -1) {
     free(input);
@@ -50,7 +50,7 @@ void inputtop(char *input, size_t s, int status) {
     }
 
     
-    int i = 0;
+    
     while (input[i] != '\0') {
       if (input[i] == '#') {
         input[i] = '\0';
