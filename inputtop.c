@@ -49,6 +49,7 @@ exit(0);
 }
 else
 {
+comm(input);
 if (empty(input) == 1)
 {
 free(input);
@@ -63,8 +64,7 @@ break;
 }
 i++;
 }
-iput=comm(input);
-Parse(iput, delim);
+Parse(input, delim);
 }
 free(input);
 }
