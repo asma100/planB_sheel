@@ -7,56 +7,57 @@
 */
 void Parse(char *input, const char *delim)
 {
-    char **arrc;
-    char *tok;
-    int tok_counter = 0;
-    char **arr = NULL;
-    int u = 0;
-    char *input_cp = strdup(input);
-    empchack(input, input_cp);
-    tok = strtok(input, delim);
-    while (tok != NULL)
-    {
-        tok_counter++;
-        tok = strtok(NULL, delim);
-    }
-    tok_counter++;
-    arr = malloc(sizeof(char *) * tok_counter);
-    if (arr == NULL)
-    {
-        perror("Error allocating memory for arr:");
-        free(input);
-        free(input_cp);
-        return;
-    }
-    tok = strtok(input_cp, delim);
-    for (u = 0; tok != NULL; u++)
-    {
-        arr[u] = malloc(sizeof(char) * (strlen(tok) + 2));
-        if (arr[u] == NULL)
-        {
-            perror("Error allocating memory for arr[u]:");
-            freep(arr, input_cp);
-            free(input);
-            return;
-        }
-        strcpy(arr[u], tok);
-        tok = strtok(NULL, delim);
-    }
-    arr[u] = NULL;
-    arrc = comment(arr, tok_counter);
-    if(arrc != NULL)
-    {
-    topcmd(arrc);
-    freep(arrc, input_cp);
-    }
-    else 
-    { 
-         freep(arrc, input_cp);
-        return;
-    }
+char *tok;
+int tok_counter = 0;
+char **arr = NULL;
+int  u = 0;
+char *input_cp = strdup(input);
+empchack(input, input_cp);
+tok = strtok(input, delim);
+while (tok != NULL)
+{
+tok_counter++;
+tok = strtok(NULL, delim);
+}
+tok_counter++;
+arr = malloc(sizeof(char *) * tok_counter);
+if (arr == NULL)
+{
+perror("Error allocating memory for arr:");
+free(input);
+free(input_cp);
+return;
+}
+tok = strtok(input_cp, delim);
+for (u = 0; tok != NULL; u++)
+{
+arr[u] = malloc(sizeof(char) * (strlen(tok) + 2));
+if (arr[u] == NULL)
+{
+perror("Error allocating memory for arr[u]:");
+freep(arr, input_cp, u);
+free(input);
+return;
+}
+strcpy(arr[u], tok);
+tok = strtok(NULL, delim);
+}
+arr[u] = NULL;
+topcmd(arr);
+freep(arr, input_cp, u);
 }
 
+
+    
+          
+            
+    
+
+          
+          Expand Down
+    
+    
+  
 /**
  * freep - free
  *@arr: array
@@ -64,13 +65,13 @@ void Parse(char *input, const char *delim)
  *@u: counter
  * Return: void
 */
-void freep(char **arrc, char *input_cp)
+void freep(char **arr, char *input_cp, int u)
 {
-    int i;
-    for (i = 0; arrc[i] != NULL; i++)
-        free(arrc[i]);
-    free(arrc);
-    free(input_cp);
+int i;
+for (i = 0; i < u; i++)
+free(arr[i]);
+free(arr);
+free(input_cp);
 }
 /**
  * empchack - function for the environ
@@ -81,15 +82,15 @@ void freep(char **arrc, char *input_cp)
 */
 void empchack(char *input, char *input_cp)
 {
-    if (input_cp == NULL)
-    {
-        perror("Error allocating memory:");
-        free(input);
-        return;
-    }
-    if (input[0] == '\0')
-    {
-        free(input_cp);
-        return;
-    }
+if (input_cp == NULL)
+{
+perror("Error allocating memory:");
+free(input);
+return;
+}
+if (input[0] == '\0')
+{
+free(input_cp);
+return;
+}
 }
