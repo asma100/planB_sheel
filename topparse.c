@@ -56,7 +56,7 @@ freep(arrc, input_cp, u);
  *@u: counter
  * Return: void
 */
-void freep(char **arr, char *input_cp)
+void freep(char **arrc, char *input_cp)
 {
 int i;
 for (i = 0; i != NULL; i++)
