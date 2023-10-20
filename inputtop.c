@@ -68,7 +68,7 @@ free(input);
 }
 /**
  * newline - function fornewline
- * 
+ *
  * @input: value
  *
  * Return: void
