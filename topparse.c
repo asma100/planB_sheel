@@ -47,6 +47,7 @@ void Parse(char *input, const char *delim)
     arrc = comment(arr, tok_counter);
     topcmd(arrc);
     freep(arrc, input_cp);
+  free(arr);
 }
 
 /**
