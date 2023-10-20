@@ -36,7 +36,7 @@ arr[u] = malloc(sizeof(char) * (strlen(tok) + 2));
 if (arr[u] == NULL)
 {
 perror("Error allocating memory for arr[u]:");
-freep(arr, input_cp, u);
+freep(arr, input_cp);
 free(input);
 return;
 }
