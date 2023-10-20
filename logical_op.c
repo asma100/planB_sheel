@@ -17,7 +17,7 @@ for (count = 0; argv[count] != NULL; count++)
 }
 /* Allocate space for the new argument vector.*/
 new_argv = malloc(sizeof(char *) * (count + 1));
-/*Copy the arguments into the new argument vector, skipping any logical operators.*/
+/*Copy new argument vector, skipping any logical operators.*/
 for (i = 0; i < count; i++)
 {
 if (strcmp(argv[i], "&&") == 0 || strcmp(argv[i], "||") == 0)
