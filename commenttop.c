@@ -1,4 +1,4 @@
-#include "top.h"
+##include "top.h"
 char **comment(char **arr, int tok_counter)
 {
   int i = 0, count = 0, a = 0; 
@@ -6,19 +6,20 @@ char **comment(char **arr, int tok_counter)
   while(arr[i] != NULL )
   {
     int j = 0;
-   while(arr[i][j] != '\0' && arr[i][j] != '#')
+    while(arr[i][j] != '\0')
     {
-       if(arr[i][j] != '#' && arr[i] != NULL) 
+      if(arr[i][j] == '#')
+      {
+        a = 1;
+        break;
+      }
+      j++;
+    }
+    if(arr[i][j] != '#' && arr[i] != NULL) 
     {
       ar[count] = strdup(arr[i]);
       count++;
     }
-      
-        a = 1;
-        
-      j++;
-    }
- 
     if (a == 1)
     {
       break;
@@ -31,5 +32,3 @@ for (i = 0; arr[i] != NULL; i++)
 free(arr);
 return ar;
 }
-
-
