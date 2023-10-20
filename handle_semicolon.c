@@ -25,7 +25,7 @@ void handle_semicolon(char *input) {
                 cmd_args[arg_count++] = arg;
                 arg = strtok(NULL, " \t\n");
             }
-            cmd_args[arg_count] = NULL;  // Null-terminate the argument array
+            cmd_args[arg_count] = NULL;  
 
            
             topcmd(cmd_args);
