@@ -6,7 +6,7 @@ char **comment(char **arr, int tok_counter)
   while(arr[i] != NULL )
   {
     int j = 0;
-    while(arr[i][j] != '\0'|| arr[i][j] != '#')
+   while(arr[i][j] != '\0' && arr[i][j] != '#')
     {
        if(arr[i][j] != '#' && arr[i] != NULL) 
     {
