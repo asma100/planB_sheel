@@ -7,7 +7,7 @@
 
 void handle_logicalop(char **argv) {
     int i = 0;
-    int j = 0;
+   
     int k = 0;
     int count = 0;
     char **new_argv;
