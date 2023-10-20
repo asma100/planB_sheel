@@ -51,9 +51,9 @@ void Parse(char *input, const char *delim)
     freep(arrc, input_cp);
     }
     else 
-    {
+    { 
+         freep(arrc, input_cp);
         return;
-        freep(arrc, input_cp);
     }
 }
 
