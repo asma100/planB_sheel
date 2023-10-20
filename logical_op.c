@@ -1,5 +1,5 @@
 #include "top.h"
-void handle_logicalop(char **argv) {
+void handle_logicalop(char **argv,int tok_counter) {
   int i = 0;
   int j = 0;
   int k = 0;
