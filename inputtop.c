@@ -63,6 +63,7 @@ break;
 }
 i++;
 }
+comm(input);
 Parse(input, delim);
 }
 free(input);
@@ -74,8 +75,16 @@ free(input);
  *
  * Return: void
 */
-void newline(char *input)
+char *comm(char *input)
 {
-free(input);
-return;
+while (input[i] != '\0')
+{
+if (input[i] == '#')
+{
+input[i] = '\0';
+break;
+}
+i++;
+}
+return(input)
 }
