@@ -51,7 +51,8 @@ else
 {
 if (empty(input) == 1)
 {
-newline(input);
+free(input);
+return;
 }
 while (input[i] != '\0')
 {
