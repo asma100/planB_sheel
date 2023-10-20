@@ -3,7 +3,7 @@ char **comment(char **arr,int tok_counter)
 {
     int i = 0, j = 0,m = 0;
     char **ar = malloc(sizeof(char*) * tok_counter);
-    
+     char **arrc;
     while(arr[i] != NULL)
     {
         j = 0;
@@ -21,7 +21,7 @@ char **comment(char **arr,int tok_counter)
     next:
         i++; 
     }
-     char **arrc = malloc(sizeof(char*) * i);
+     arrc = malloc(sizeof(char*) * i);
     while (m<i)
        {
            ar[i] = strdup(arr[i]); 
