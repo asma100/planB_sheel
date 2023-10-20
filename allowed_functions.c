@@ -1,4 +1,4 @@
-#include "top.h"
+/*#include "top.h"
 int _strlen(char *s) {
  int cou = 0;
  while (*s != '\0') {
@@ -6,7 +6,7 @@ int _strlen(char *s) {
  cou++;
  }
  return (cou);
-}
+}*/
 
 void print_error(const char *message) {
   size_t len = strlen(message);
