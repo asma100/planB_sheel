@@ -46,7 +46,7 @@ tok = strtok(NULL, delim);
 arr[u] = NULL;
 arrc=comment(arr, tok_counter);
 topcmd(arrc);
-freep(arr, input_cp, u);
+freep(arrc, input_cp, u);
 }
 
 /**
@@ -56,10 +56,10 @@ freep(arr, input_cp, u);
  *@u: counter
  * Return: void
 */
-void freep(char **arr, char *input_cp, int u)
+void freep(char **arr, char *input_cp)
 {
 int i;
-for (i = 0; i < u; i++)
+for (i = 0; i != NULL; i++)
 free(arrc[i]);
 free(arrc);
 free(input_cp);
