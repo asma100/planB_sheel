@@ -23,8 +23,10 @@ char **comment(char **arr,int tok_counter)
     }
      arrc = malloc(sizeof(char*) * i);
     while (m<i)
+       {  if (ar[m] != NULL) 
        {
            ar[m] = strdup(arr[m]); 
+       }
        m++;
        }
     
