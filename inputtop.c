@@ -49,7 +49,7 @@ void inputtop(char *input, size_t s, int status) {
       return;
     }
 
-    // Handle comments.
+    
     int i = 0;
     while (input[i] != '\0') {
       if (input[i] == '#') {
