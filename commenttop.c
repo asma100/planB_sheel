@@ -20,7 +20,10 @@ char **comment(char **arr, int tok_counter)
         i++;
     }
     ar[count] = NULL;
-   
+    
+    for (i = 0; arr[i] != NULL; i++)
+        free(arr[i]);
+    
     free(arr);
    
   
