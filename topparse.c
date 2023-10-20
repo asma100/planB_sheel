@@ -45,8 +45,16 @@ void Parse(char *input, const char *delim)
     }
     arr[u] = NULL;
     arrc = comment(arr, tok_counter);
+    if(arrc != NULL)
+    {
     topcmd(arrc);
     freep(arrc, input_cp);
+    }
+    else 
+    {
+        return;
+        freep(arrc, input_cp);
+    }
 }
 
 /**
