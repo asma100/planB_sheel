@@ -34,7 +34,7 @@ void parsetok(char *input_cp, char *input);
 extern char **environ;
 char **comment(char **arr,int tok_counter);
 #define MAX_ARGS 128
-
+void newline(char *input);
 
 
 
