@@ -60,8 +60,8 @@ void freep(char **arr, char *input_cp, int u)
 {
 int i;
 for (i = 0; i < u; i++)
-free(arr[i]);
-free(arr);
+free(arrc[i]);
+free(arrc);
 free(input_cp);
 }
 /**
