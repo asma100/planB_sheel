@@ -13,6 +13,8 @@
 #include <ctype.h>
 #include <fcntl.h>
 
+
+char *comm(char *input);
 void free_exit(char *input);
 void empchack(char * input, char * input_cp);
 void freep(char **arrc,char *input_cp, int u);
