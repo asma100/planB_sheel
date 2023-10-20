@@ -37,6 +37,7 @@ extern char **environ;
 char **comment(char **arr, int tok_counter);
 #define MAX_ARGS 128
 void newline(char *input);
+void handle_semicolon(char *input);
 
 
 
