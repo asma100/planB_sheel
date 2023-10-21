@@ -54,7 +54,7 @@ else
 
      
         handle_semicolon(input);
-       
+ comm(input);      
 if (empty(input) == 1)
 {
 free(input);
