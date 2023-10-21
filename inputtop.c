@@ -44,14 +44,15 @@ else if (strcmp(input, "env\n") == 0)
 {
 env_builtin();
 free(input);
-exit(0);
+/*exit(0);*/
+            return;
 }
 else
 {
-/*if (input[strlen(input) - 1] == '\n') {
+if (input[strlen(input) - 1] == '\n') {
             input[strlen(input) - 1] = '\0';
         }
-*/
+
      
         handle_semicolon(input);
  comm(input);      
