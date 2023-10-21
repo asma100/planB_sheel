@@ -7,7 +7,8 @@
 void handle_semicolon(char *input) {
     char *token;
     char *saveptr;
-
+    int status;
+ pid_t pid;
     token = strtok_r(input, ";", &saveptr);
 
     while (token != NULL) {
@@ -25,7 +26,7 @@ void handle_semicolon(char *input) {
             cmd_args[arg_count] = NULL;
 
            
-            pid_t pid = fork();
+            pid = fork();
             if (pid == -1) {
                 perror("fork");
             } else if (pid == 0) {
@@ -38,8 +39,8 @@ void handle_semicolon(char *input) {
     }
 
     
-    int status;
+    status;
     while (wait(&status) > 0) {
-        // Continue waiting
+        
     }
 }
