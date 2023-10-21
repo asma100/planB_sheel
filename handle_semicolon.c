@@ -7,7 +7,7 @@
 void handle_semicolon(char *input) {
     char *token;
     char *saveptr;
-    int status;
+
  pid_t pid;
     token = strtok_r(input, ";", &saveptr);
 
@@ -39,8 +39,5 @@ void handle_semicolon(char *input) {
     }
 
     
-    status;
-    while (wait(&status) > 0) {
-        
-    }
+
 }
