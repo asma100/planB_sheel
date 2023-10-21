@@ -7,7 +7,7 @@
 void handle_semicolon(char *input) {
     char *token;
     char *saveptr;
-int execute_command;
+
     token = strtok_r(input, ";", &saveptr);
 
     while (token != NULL) {
@@ -25,15 +25,7 @@ int execute_command;
             cmd_args[arg_count] = NULL;
 
             
-             execute_command = 1;
-            if (arg_count > 0 && strcmp(cmd_args[0], "ls") == 0) {
-                execute_command = 0;
-            }
-
-          
-            if (execute_command) {
-                topcmd(cmd_args);
-            }
+            topcmd(cmd_args);
         }
 
         token = strtok_r(NULL, ";", &saveptr);
