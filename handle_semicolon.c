@@ -5,34 +5,31 @@
  * @input: the input string containing commands separated by semicolons
  */
 void handle_semicolon(char *input) {
- 
-    char *clean_input = comm(input);
-
     char *token;
     char *saveptr;
 
-    
-    token = strtok_r(clean_input, ";", &saveptr);
+    token = strtok_r(input, ";", &saveptr);
 
     while (token != NULL) {
-        if (!empty(token)) {
-         
+        char *command = comm(token);
+
+        if (!empty(command)) {
+           
             char *cmd_args[MAX_ARGS];
             int arg_count = 0;
 
-           
-            char *arg = strtok(token, " \t\n");
+            
+            char *arg = strtok(command, " \t\n");
             while (arg != NULL) {
                 cmd_args[arg_count++] = arg;
                 arg = strtok(NULL, " \t\n");
             }
-            cmd_args[arg_count] = NULL; 
+            cmd_args[arg_count] = NULL;  
 
-           
             topcmd(cmd_args);
         }
 
-       
+        
         token = strtok_r(NULL, ";", &saveptr);
     }
 }
