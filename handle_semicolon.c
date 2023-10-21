@@ -7,6 +7,7 @@
 void handle_semicolon(char *input) {
     char *token;
     char *saveptr;
+    int execute_command;
 
     token = strtok_r(input, ";", &saveptr);
 
@@ -25,9 +26,9 @@ void handle_semicolon(char *input) {
             cmd_args[arg_count] = NULL;
 
          
-            int execute_command = 1;
+            execute_command = 1;
             if (arg_count > 0 && strcmp(cmd_args[0], "ls") == 0) {
-                execute_command = 0; // Skip execution for 'ls' command
+                execute_command = 0; 
             }
 
             
