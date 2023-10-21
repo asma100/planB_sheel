@@ -21,7 +21,7 @@ void handle_semicolon(char *input) {
   /* Execute each command */
   for (j = 0; j < i; j++) {
     Parse(commands[j], " \t\n");
-    topcmd(argv);
+    topcmd(commands[j]);
   }
 
   /* Free memory */
