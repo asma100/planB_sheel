@@ -5,39 +5,27 @@
  * @input: the input string containing commands separated by semicolons
  */
 void handle_semicolon(char *input) {
-    char *token;
-    char *saveptr;
+  char *token;
+  char **commands = malloc(sizeof(char *) * MAX_ARGS);
+  int i = 0;
 
- pid_t pid;
-    token = strtok_r(input, ";", &saveptr);
+  /* Tokenize input based on semicolons */
+  token = strtok(input, ";");
+  while (token != NULL) {
+    commands[i++] = strdup(token);
+    token = strtok(NULL, ";");
+  }
+  commands[i] = NULL;
 
-    while (token != NULL) {
-        char *command = comm(token);
+  /* Execute each command */
+  for (int j = 0; j < i; j++) {
+    Parse(commands[j], " \t\n");
+    topcmd(argv);
+  }
 
-        if (!empty(command)) {
-            char *cmd_args[MAX_ARGS];
-            int arg_count = 0;
-
-            char *arg = strtok(command, " \t\n");
-            while (arg != NULL) {
-                cmd_args[arg_count++] = arg;
-                arg = strtok(NULL, " \t\n");
-            }
-            cmd_args[arg_count] = NULL;
-
-           
-            pid = fork();
-            if (pid == -1) {
-                perror("fork");
-            } else if (pid == 0) {
-                topcmd(cmd_args);
-                exit(EXIT_SUCCESS);
-            }
-        }
-
-        token = strtok_r(NULL, ";", &saveptr);
-    }
-
-    
-
+  /* Free memory */
+  for (int j = 0; j < i; j++) {
+    free(commands[j]);
+  }
+  free(commands);
 }
