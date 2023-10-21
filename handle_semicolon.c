@@ -24,10 +24,17 @@ void handle_semicolon(char *input) {
             }
             cmd_args[arg_count] = NULL;
 
-          
-            topcmd(cmd_args);
+            pid_t pid = fork();
+            if (pid == -1) {
+                perror("fork");
+            } else if (pid == 0) {
+                topcmd(cmd_args);
+                exit(EXIT_SUCCESS);
+            } else {
+                int status;
+                waitpid(pid, &status, 0); 
+            }
         }
 
         token = strtok_r(NULL, ";", &saveptr);
     }
-}
