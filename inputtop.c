@@ -48,7 +48,7 @@ exit(0);
 }
 else
 {
-
+handle_semicolon(input);
  comm(input);      
 if (empty(input) == 1)
 {
