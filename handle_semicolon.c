@@ -24,7 +24,7 @@ void handle_semicolon(char *input) {
             }
             cmd_args[arg_count] = NULL;
 
-            
+          
             topcmd(cmd_args);
         }
 
