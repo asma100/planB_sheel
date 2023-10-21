@@ -14,22 +14,28 @@ void handle_semicolon(char *input) {
         char *command = comm(token);
 
         if (!empty(command)) {
-           
             char *cmd_args[MAX_ARGS];
             int arg_count = 0;
 
-            
             char *arg = strtok(command, " \t\n");
             while (arg != NULL) {
                 cmd_args[arg_count++] = arg;
                 arg = strtok(NULL, " \t\n");
             }
-            cmd_args[arg_count] = NULL;  
+            cmd_args[arg_count] = NULL;
 
-            topcmd(cmd_args);
+         
+            int execute_command = 1;
+            if (arg_count > 0 && strcmp(cmd_args[0], "ls") == 0) {
+                execute_command = 0; // Skip execution for 'ls' command
+            }
+
+            
+            if (execute_command) {
+                topcmd(cmd_args);
+            }
         }
 
-        
         token = strtok_r(NULL, ";", &saveptr);
     }
 }
